@@ -1,0 +1,6 @@
+C:\adata\scratchpad\MSA\CurrencyDemo\CurrencyDemo\bin\Debug\CurrencyDemo.exe.config
+C:\adata\scratchpad\MSA\CurrencyDemo\CurrencyDemo\obj\Debug\CurrencyDemo.csprojResolveAssemblyReference.cache
+C:\adata\scratchpad\MSA\CurrencyDemo\CurrencyDemo\bin\Debug\CurrencyDemo.exe
+C:\adata\scratchpad\MSA\CurrencyDemo\CurrencyDemo\bin\Debug\CurrencyDemo.pdb
+C:\adata\scratchpad\MSA\CurrencyDemo\CurrencyDemo\obj\Debug\CurrencyDemo.exe
+C:\adata\scratchpad\MSA\CurrencyDemo\CurrencyDemo\obj\Debug\CurrencyDemo.pdb
