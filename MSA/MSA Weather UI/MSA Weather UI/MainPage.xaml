@@ -8,6 +8,26 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="75,71,0,0" TextWrapping="Wrap" Text="Weather App" VerticalAlignment="Top" SelectionChanged="textBlock_SelectionChanged" FontWeight="Bold" FontSize="37.333"/>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Margin="75,162,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" PlaceholderText="Enter City" Width="134"/>
+        <Button x:Name="button" Content="Show Weather" HorizontalAlignment="Left" Margin="247,162,0,0" VerticalAlignment="Top" Click="userDoubleTapped"/>
+        <StackPanel HorizontalAlignment="Left" Height="275" Margin="75,274,0,0" VerticalAlignment="Top" Width="445">
+            <StackPanel Height="56" Orientation="Horizontal" Margin="0,0,0.333,0">
+                <TextBlock x:Name="textBlock1" TextWrapping="Wrap" Text="City:" Margin="10,5,10,0" FontSize="21.333"/>
+                <TextBlock x:Name="textBlock2" TextWrapping="Wrap" Text="TextBlock" FontSize="24" Margin="5,5,0,0" DoubleTapped="userDoubleTapped"/>
+
+            </StackPanel>
+            <StackPanel Height="56" Orientation="Horizontal" Margin="0,0,0.333,0">
+                <TextBlock x:Name="textBlock3" TextWrapping="Wrap" Text="City:" Margin="10,5,10,0" FontSize="21.333"/>
+                <TextBlock x:Name="textBlock4" TextWrapping="Wrap" Text="TextBlock" FontSize="24" Margin="5,5,0,0"/>
+
+            </StackPanel>
+            <StackPanel Height="56" Orientation="Horizontal" Margin="0,0,0.333,0">
+                <TextBlock x:Name="textBlock5" TextWrapping="Wrap" Text="City:" Margin="10,5,10,0" FontSize="21.333"/>
+                <TextBlock x:Name="textBlock6" TextWrapping="Wrap" Text="TextBlock" FontSize="24" Margin="5,5,0,0"/>
+
+            </StackPanel>
+        </StackPanel>
 
     </Grid>
 </Page>

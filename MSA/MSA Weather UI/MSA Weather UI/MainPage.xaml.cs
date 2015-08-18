@@ -26,5 +26,26 @@ namespace MSA_Weather_UI
         {
             this.InitializeComponent();
         }
+
+        private void textBlock_SelectionChanged(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void userDoubleTapped(object sender, DoubleTappedRoutedEventArgs e)
+        {
+            int num = 5;
+        }
+
+        private void use(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void userDoubleTapped(object sender, RoutedEventArgs e)
+        {
+
+            textBlock.Text = "Interactive Weather";
+        }
     }
 }
