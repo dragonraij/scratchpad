@@ -12,28 +12,28 @@ namespace Weather2
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Weather app - enter City:");
+            Console.WriteLine("Currency app - enter Country Code (eg NZD):");
 
-            string city = Console.ReadLine();
+            string baseRate = Console.ReadLine();
 
-            getWeather(city);
+            getCurrency(baseRate);
 
             // Prevent app from closing
             Console.ReadKey();
         }
 
-            static async void getWeather(string city) {
-            Console.WriteLine("Loading weather data ... ");
+            static async void getCurrency(string BaseRate) {
+            Console.WriteLine("Loading currency data ... ");
 
             try
             {
                 HttpClient client = new HttpClient();
 
-                Weather_Object.RootObject rootObject = JsonConvert.DeserializeObject<Weather_Object.RootObject>(await client.GetStringAsync(new Uri("http://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=metric&APPID=440e3d0ee33a977c5e2fff6bc12448ee")));
+                Currency.RootObject rootObject = JsonConvert.DeserializeObject<Currency.RootObject>(await client.GetStringAsync(new Uri("http://api.fixer.io/latest?base="+BaseRate)));
 
-                Console.WriteLine("Current City is : "+rootObject.name);
-                Console.WriteLine("Temperate : \t"+ rootObject.main.temp+"C");
-                Console.WriteLine("Wind Speed : \t" + rootObject.wind.speed);
+                Console.WriteLine("Base Rate: \t\t" + rootObject.@base)
+                    ;
+                Console.WriteLine("Exchange Rate for USD: \t\t" + rootObject.rates.AUD);
             }
             catch (Exception ex)
             {

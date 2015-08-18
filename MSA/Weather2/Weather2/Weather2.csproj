@@ -56,9 +56,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Currency.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Weather_Object.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
