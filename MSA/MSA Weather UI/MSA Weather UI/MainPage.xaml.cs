@@ -46,6 +46,7 @@ namespace MSA_Weather_UI
         {
 
             textBlock.Text = "Interactive Weather";
+
         }
     }
 }
