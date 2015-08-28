@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -88,14 +89,118 @@ namespace HelloWorld
 
             //}
 
-            string zig = "You can get what you want out of life";
-            char[] charArray = zig.ToCharArray();
-            Array.Reverse(charArray);
+            //string zig = "You can get what you want out of life";
+            //char[] charArray = zig.ToCharArray();
+            //Array.Reverse(charArray);
 
-            foreach (char zigChar in charArray)
-                Console.Write(zigChar);
+            //foreach (char zigChar in charArray)
+            //    Console.Write(zigChar);
+
+            //Console.ReadLine();
+            //string myValue = superSecretFo("sunshine");
+            //Console.WriteLine(myValue);
+            //Console.ReadLine();
+
+            //**
+            //READWRITE TEXT FILES
+            //**
+
+            //StreamReader myReader = new StreamReader("Values.txt");
+            //string line = "";
+
+            //while (line != null)
+            //{
+            //    line = myReader.ReadLine();
+            //    if (line != null)
+            //        Console.WriteLine(line);
+            //}
+
+            //myReader.Close();
+            //Console.ReadLine();
+
+            //**
+            //Working with strings
+            //**
+
+            // string myString = "Go to \"your\" \n c:\\ drive";
+
+            // string myString = string.Format("Make: {0} (Model: {1})", "BMW", "Bonzai");
+
+            //string myString = string.Format("{0:C}", 123.45); // c= currency p = percent n = number also use for currency format
+
+            //StringBuilder myString = new StringBuilder();
+
+            //for (int i = 0; i < 100; i++)
+            //{
+            //    myString.Append("--");
+            //    myString.Append(i);
+
+            //}
+
+            //   string myString = "Hello my name is ";
+
+            //myString = myString.Substring(3,9);
+            //myString = myString.ToUpper();
+            //myString = myString.Replace(" ", "--");
+
+            //Console.WriteLine(myString);
+
+
+            //**
+            //Working with date/time
+            //**
+
+            DateTime myValue = DateTime.Now;
+            Console.WriteLine(myValue.ToShortDateString());
+            Console.WriteLine(myValue.ToShortTimeString());
+            Console.WriteLine(myValue.ToLongDateString());
+            Console.WriteLine(myValue.AddDays(3).ToShortDateString());
+            Console.WriteLine(myValue.Month);
+
+            DateTime mybirth = new DateTime(1969,3,3);
+            TimeSpan myAge = DateTime.Now.Subtract(mybirth);
+            Console.WriteLine(myAge.TotalDays);
+            Console.ReadLine();
+
+            //
+            // Working with classes
+            //
+
+            Car myNewCar = new Car();
+            myNewCar.Make = "oldsmobile";
+            myNewCar.Model = "Cutlass Supereme";
+            myNewCar.Year = 1986;
+            myNewCar.Color = "Silver";
+
+            Console.WriteLine("{0} - {1} - {2}",
+                myNewCar.Make,
+                myNewCar.Model,
+                myNewCar.Color);
 
             Console.ReadLine();
         }
+
+        private static string superSecretFo()
+        {
+            // some cool suff here
+            return "Hello World!";
+        }
+
+        private static string superSecretFo(string name)
+        {
+            return String.Format("Hello, {0}!", name);
+        }
+
+        
+        
+    }
+
+    class Car
+    {
+        public string Make { get; set; }
+        public string Model { get; set; }
+        public int Year { get; set; }
+        public string Color { get; set; }
+
     }
 }
