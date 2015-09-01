@@ -177,7 +177,36 @@ namespace HelloWorld
                 myNewCar.Model,
                 myNewCar.Color);
 
+            //use helper method to print out car details
+            printCarDetails(myNewCar);
+            
+
+            Console.WriteLine(myNewCar.DetermineMarketValue());
+
+            //Using inheritance on truck method to create truck object
+            Truck myTruck = new Truck();
+
+            //Assign values to truck
+            myTruck.Make = "Ford";
+            myTruck.Model = "F950";
+            myTruck.Year = 2006;
+            myTruck.Color = "Black";
+            myTruck.TowingCapacity = 1200;
+
+            //use helper method to print truck
+            //this works because truck is a type of car super/sub class base/derived class
+            printCarDetails(myTruck);
+            Car2 myCar = new Car2();
+            Car2 myOtherCar = myCar;
+            Car2 myThirdCar = new Car2("Nissan", "Bluebird", 1980, "blue");
             Console.ReadLine();
+        }
+
+        //create helper method for program
+        private static void printCarDetails(Car car)
+        {
+            Console.WriteLine("Here are the Car's Details: {0}",
+                car.FormatMe());
         }
 
         private static string superSecretFo()
@@ -195,12 +224,75 @@ namespace HelloWorld
         
     }
 
+    // create car class
     class Car
     {
+        //class can have properties and methods
         public string Make { get; set; }
         public string Model { get; set; }
         public int Year { get; set; }
         public string Color { get; set; }
 
+        public double DetermineMarketValue()
+        {
+            double carValue = 100.00;
+
+            if (this.Year > 1990)
+                carValue = 10000.0;
+            else
+                carValue = 2000.0;
+
+            return carValue;
+        }
+
+        public virtual string FormatMe()
+        {
+            return String.Format("{0} - {1} - {2} - {3}",
+                this.Make,
+                this.Model,
+                this.Color,
+                this.Year);
+        }
+    }
+
+
+    // Truck class inherits from original car class
+    class Truck : Car
+    {
+        public int TowingCapacity { get; set; }
+
+        //override the formatme method in car to print truck details
+        public override string FormatMe()
+        {
+            return String.Format("{0} - {1} - {2} Towing Units}",
+                this.Make,
+                this.Model,
+                this.TowingCapacity);
+        }
+    }
+
+
+
+    //Car class copy
+    class Car2
+    {
+        public string Make { get; set; }
+        public string Model { get; set; }
+        public int Year { get; set; }
+        public string  Color { get; set; }
+        public int OriginalPrice { get; set; }
+
+        public Car2()
+        {
+            this.Make = "Nissan";
+        }
+
+        public Car2(string make, string model, int year, string color)
+        {
+            Make = make;
+            Model = model;
+            Year = year;
+            Color = color;
+        }
     }
 }
