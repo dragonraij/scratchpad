@@ -52,6 +52,22 @@
             <Button Content="First Button" />
             <Button Content="Second Button" />
             <Button Content="Third Button" />
+            <Button>
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="Assets/SmallLogo.png" Width="20px" Height="20px" />
+                    <TextBlock Text="Fourth Button" Margin="10, 0, 5,0"/>
+                </StackPanel>
+            </Button>
         </StackPanel>
+        
+        <Ellipse Grid.Column="2" >
+            <Ellipse.Fill>
+                <LinearGradientBrush EndPoint="1, 0.5" StartPoint="0, 0.5" >
+                    <GradientStop Color="Red" Offset="0" />
+                    <GradientStop Color="Green" Offset=" 0.5" />
+                    <GradientStop Color="Blue" Offset="1" />
+                </LinearGradientBrush>
+            </Ellipse.Fill>
+        </Ellipse>
     </Grid>
 </Page>
