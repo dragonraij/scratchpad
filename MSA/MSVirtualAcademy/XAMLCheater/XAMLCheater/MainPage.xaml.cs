@@ -33,6 +33,22 @@ namespace XAMLCheater
         /// property is typically used to configure the page.</param>
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
+            TextBlock textBlock2 = new TextBlock();
+            textBlock2.Name = "textBlock2";
+            textBlock2.Height = 23;
+            textBlock2.HorizontalAlignment = HorizontalAlignment.Right;
+            textBlock2.Margin = new Thickness(0, 45, 70, 0);
+            textBlock2.Text = "Hello from the .cs file";
+
+            layoutGrid.Children.Add(textBlock2);
+            Grid.SetRow(textBlock2, 1);
+            Grid.SetColumn(textBlock2, 2);
+
+        }
+
+        private void TextBox_TextChanged_1(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }
