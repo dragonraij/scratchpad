@@ -12,27 +12,44 @@ namespace FileReader
         static void Main()
         {
             Console.WriteLine("Hellow Worlds");
-            // Crate an instance of StremReader
-            StreamReader reader = new StreamReader("Sample.txt");
 
-
-            using (reader)
+            try
             {
-                int lineNumber = 0;
+                // Crate an instance of StremReader
+                StreamReader reader = new StreamReader("Sample.txt");
 
-                //REad first line from the text file
-                string line = reader.ReadLine();
 
-                //Read the other lines from the text file
-                while (line != null)
+                using (reader)
                 {
-                    lineNumber++;
-                    Console.WriteLine("Line {0}: {1}", lineNumber, line);
-                    line = reader.ReadLine();
+                    int lineNumber = 0;
+
+                    //REad first line from the text file
+                    string line = reader.ReadLine();
+
+                    //Read the other lines from the text file
+                    while (line != null)
+                    {
+                        lineNumber++;
+                        Console.WriteLine("Line {0}: {1}", lineNumber, line);
+                        line = reader.ReadLine();
+                    }
                 }
             }
+            catch (FileNotFoundException)
+            {
+                Console.WriteLine(
+                    "Can not find the file");
+            }
 
-            //Close the resourse after finished using it
+            catch (DirectoryNotFoundException)
+            {
+                Console.Error.WriteLine("Invalid directory");
+            }
+
+            catch (IOException) {
+                Console.Error.WriteLine("IO error occoured");
+            }
+             //Close the resourse after finished using it
             // reader.Close();
 
             //Write a file
