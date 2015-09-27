@@ -1,0 +1,16 @@
+﻿<Page
+    x:Class="LooFinder.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:LooFinder"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
+        <TextBlock HorizontalAlignment="Left" Margin="307,112,0,0" TextWrapping="Wrap" Text="Enter Suburb/Postcode" VerticalAlignment="Top" Height="38" Width="148" Opacity="0.8" FontSize="14"/>
+        <Button Content="Find" HorizontalAlignment="Left" Margin="487,112,0,0" VerticalAlignment="Top"/>
+        <Button Content="Find By Location" HorizontalAlignment="Left" Margin="710,112,0,0" VerticalAlignment="Top" Height="38"/>
+
+    </Grid>
+</Page>
