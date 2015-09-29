@@ -10,7 +10,8 @@ namespace Date_Time
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("{0} : {1}", "The current time is", DateTime.Now.ToShortTimeString());
+            Console.WriteLine("{0} : {1}", "The current time is", DateTime.Now.ToShort
+                TimeString());
             Console.WriteLine("{0} : {1}", "Todays date is", DateTime.Now.ToLongDateString());
             Console.ReadKey();
         }
