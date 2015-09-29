@@ -17,7 +17,7 @@ namespace FirstHundred
             for (int i = 0; i < 100; i++)
             {
                 num++;
-                if (num%2==0)
+                if (num%2==1)
                 {
                     Console.WriteLine(-num);
                 }
