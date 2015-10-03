@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest">
-  <Identity Name="a04a5855-48cc-4312-af3f-aee41ac27c42" Publisher="CN=Raj" Version="1.1.0.0" />
+  <Identity Name="3091e4b5-5316-4c74-9e4b-c9d249af247d" Publisher="CN=Raj" Version="1.0.0.0" />
   <Properties>
-    <DisplayName>ContosoCookbook</DisplayName>
+    <DisplayName>NZCities</DisplayName>
     <PublisherDisplayName>Raj</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
@@ -14,13 +14,8 @@
     <Resource Language="x-generate" />
   </Resources>
   <Applications>
-    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="ContosoCookbook.App">
-      <m2:VisualElements DisplayName="ContosoCookbook" Description="ContosoCookbook" BackgroundColor="#464646" ForegroundText="light" Square150x150Logo="Assets\Logo.png" Square30x30Logo="Assets\SmallLogo.png">
-        <m2:DefaultTile>
-          <m2:ShowNameOnTiles>
-            <m2:ShowOn Tile="square150x150Logo" />
-          </m2:ShowNameOnTiles>
-        </m2:DefaultTile>
+    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="NZCities.App">
+      <m2:VisualElements DisplayName="NZ Cities" Square150x150Logo="Assets\Logo.png" Square30x30Logo="Assets\SmallLogo.png" Description="NZ Cities Application" ForegroundText="light" BackgroundColor="#464646">
         <m2:SplashScreen Image="Assets\SplashScreen.png" />
       </m2:VisualElements>
     </Application>
