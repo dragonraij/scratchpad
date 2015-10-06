@@ -9,7 +9,7 @@
 
         <!-- Application-specific resources -->
 
-        <x:String x:Key="AppName">TestApp</x:String>
+        <x:String x:Key="AppName">NZ Cities</x:String>
 
     </Application.Resources>
 </Application>

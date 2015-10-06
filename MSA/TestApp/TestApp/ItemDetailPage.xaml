@@ -16,7 +16,7 @@
         * Row 0 contains the back button and page title
         * Row 1 contains the rest of the page layout
     -->
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    <Grid Background="#FF14A858"
         DataContext="{Binding Item}"
         d:DataContext="{Binding Groups[0].Items[0], Source={d:DesignData Source=/DataModel/SampleData.json, Type=data:SampleDataSource}}">
         <Grid.ChildrenTransitions>
@@ -33,7 +33,23 @@
             TODO: Content should be placed within the following grid 
                   to show details for the current item
         -->
-        <Grid Grid.Row="1" x:Name="contentRegion"/>
+        <Grid Grid.Row="1" x:Name="contentRegion">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+                    <Image Source="{Binding ImagePath}"  Margin="10,10,10,10" Stretch="Uniform"/>
+                    <TextBlock x:Name="itemDsc" Text="{Binding Description}"   
+                        VerticalAlignment="Top" Margin="10,10,30,40" TextWrapping="WrapWholeWords" />
+               
+
+              
+                    <TextBlock x:Name="itemContent" Text="{Binding Content}"   
+                        VerticalAlignment="Top" Margin="10,10,10,10" Grid.Column="1" TextWrapping="Wrap" FontSize="16" />
+                
+            <TextBlock x:Name="itemDesc" Text="{Binding Description}"   
+                        VerticalAlignment="Top" Margin="10,10,30,40"/>
+        </Grid>
 
         <!-- Back button and page title -->
         <Grid>
