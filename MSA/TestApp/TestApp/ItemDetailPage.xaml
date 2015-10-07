@@ -40,15 +40,14 @@
             </Grid.ColumnDefinitions>
                     <Image Source="{Binding ImagePath}"  Margin="10,10,10,10" Stretch="Uniform"/>
                     <TextBlock x:Name="itemDsc" Text="{Binding Description}"   
-                        VerticalAlignment="Top" Margin="10,10,30,40" TextWrapping="WrapWholeWords" />
+                        VerticalAlignment="Top" Margin="10,10,30,40" TextWrapping="WrapWholeWords" FontSize="13.333" />
                
 
               
                     <TextBlock x:Name="itemContent" Text="{Binding Content}"   
                         VerticalAlignment="Top" Margin="10,10,10,10" Grid.Column="1" TextWrapping="Wrap" FontSize="16" />
                 
-            <TextBlock x:Name="itemDesc" Text="{Binding Description}"   
-                        VerticalAlignment="Top" Margin="10,10,30,40"/>
+           
         </Grid>
 
         <!-- Back button and page title -->
@@ -64,7 +63,7 @@
                         AutomationProperties.AutomationId="BackButton"
                         AutomationProperties.ItemType="Navigation Button"/>
             <TextBlock x:Name="pageTitle" Text="{Binding Title}" Style="{StaticResource HeaderTextBlockStyle}" Grid.Column="1" 
-                        IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" Margin="0,0,30,40"/>
+                        IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" Margin="0,0,30,40" Foreground="#FFF5F524"/>
         </Grid>
     </Grid>
 </Page>

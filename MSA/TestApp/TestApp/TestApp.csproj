@@ -134,6 +134,9 @@
     <Content Include="Assets\christhurch.jpg" />
     <Content Include="Assets\dunedin.jpeg" />
     <Content Include="Assets\hamilton.jpg" />
+    <Content Include="Assets\Logo.scale-100.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Assets\north.png" />
     <Content Include="Assets\queenstown.jpg" />
     <Content Include="Assets\south.jpg" />
@@ -141,7 +144,6 @@
     <Content Include="DataModel\SampleData.json" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\Logo.scale-100.png" />
     <Content Include="Assets\SmallLogo.scale-100.png" />
     <Content Include="Assets\SplashScreen.scale-100.png" />
     <Content Include="Assets\StoreLogo.scale-100.png" />
