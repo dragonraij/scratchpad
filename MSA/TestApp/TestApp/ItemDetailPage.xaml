@@ -40,12 +40,12 @@
             </Grid.ColumnDefinitions>
                     <Image Source="{Binding ImagePath}"  Margin="10,10,10,10" Stretch="Uniform"/>
                     <TextBlock x:Name="itemDsc" Text="{Binding Description}"   
-                        VerticalAlignment="Top" Margin="10,10,30,40" TextWrapping="WrapWholeWords" FontSize="13.333" />
+                        VerticalAlignment="Top" Margin="10,10,30,40" TextWrapping="WrapWholeWords" FontSize="21.333" FontStyle="Italic" />
                
 
               
                     <TextBlock x:Name="itemContent" Text="{Binding Content}"   
-                        VerticalAlignment="Top" Margin="10,10,10,10" Grid.Column="1" TextWrapping="Wrap" FontSize="16" />
+                        VerticalAlignment="Top" Margin="10,10,10,10" Grid.Column="1" TextWrapping="Wrap" FontSize="18.667" />
                 
            
         </Grid>
