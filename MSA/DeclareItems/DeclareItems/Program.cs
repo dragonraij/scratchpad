@@ -41,6 +41,20 @@ namespace DeclareItems
             //print a unicode
             Console.WriteLine("\u0048");
 
+            //using bools
+            bool isMale = true;
+
+            //string cats
+            string hello = "Hello";
+            string world = "World";
+
+            object join1 = hello + " " + world;
+            Console.WriteLine(join1);
+
+            //object to string
+
+            string join2 = (string) join1; 
+
             Console.ReadKey();
         }
     }
