@@ -10,7 +10,7 @@ namespace DeclareItems
     {
         static void Main(string[] args)
         {
-
+            // declare variables
             sbyte first = -115;
             sbyte second = 97;
             ushort third = 52130;
@@ -28,7 +28,20 @@ namespace DeclareItems
             decimal fif = 3045.3898790907868768767864432432223475m;
 
             Console.WriteLine("Min Max of {0} {1} {2}", fif.GetType(), decimal.MinValue, decimal.MaxValue);
-             Console.ReadKey();
+
+            //difference of floats
+            float a = 0.23313476f;
+            float b = 0.23313475f;
+            Console.WriteLine(Math.Abs(a - b) < 0.000001);
+
+            //literal value numbers
+            int hexy = 0x100;
+            Console.WriteLine("hexy of 100 is:" + hexy);
+
+            //print a unicode
+            Console.WriteLine("\u0048");
+
+            Console.ReadKey();
         }
     }
 }
