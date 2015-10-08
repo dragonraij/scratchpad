@@ -53,8 +53,20 @@ namespace DeclareItems
 
             //object to string
 
-            string join2 = (string) join1; 
+            string join2 = (string) join1;
 
+            //using quotations in strings
+            string quot = "The \"use\" of quotations can cause problems";
+
+            //literal heart
+            string heart = @"
+     o   o
+    o  o   o
+     o   o
+       o
+
+";
+            Console.WriteLine(heart);
             Console.ReadKey();
         }
     }
