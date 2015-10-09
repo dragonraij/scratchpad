@@ -11,9 +11,9 @@ namespace Odd_or_Even
         static void Main(string[] args)
         {
             //declare varialbes
-            int num = 30;
+            int num = 35;
 
-
+            // check if even
             if (num%2==0)
             {
                 Console.WriteLine("it is even");
@@ -21,6 +21,14 @@ namespace Odd_or_Even
             else
             {
                 Console.WriteLine("it is odd isnt it?");
+            }
+
+
+            //check if is divisible by 5 and  7
+
+            if ((num%7==0&&num%5==0)==true)
+            {
+                Console.WriteLine("Is divisible by both 5 and 7 ");
             }
 
             Console.ReadKey();
