@@ -34,6 +34,20 @@ namespace moreExpressions
             {
                 Console.WriteLine("The point (x,y) is outside the radius of 5");
             }
+
+            //Find if the number given  is outside a defined rectangle, given its coordinates
+            Console.WriteLine("\n\nChecking if outside of the rectangle [{-1, 1}, {5, 5}].\nClarification: for the rectangle the lower left and the upper right corners are given.");
+
+            //the point is outside the rectange if either the x value or the y value is outside the given range
+            if ( ((x<-1)||(x>5)) || ((y<1)||(y>5)) )
+            {
+                Console.WriteLine("The coordinates are outside the specified rectangle");
+            }
+            else
+            {
+                Console.WriteLine("The coordinates are within the rectangle");
+            }
+            Console.ReadKey();
         }
     }
 }
