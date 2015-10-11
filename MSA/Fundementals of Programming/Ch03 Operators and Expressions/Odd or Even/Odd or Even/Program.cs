@@ -60,6 +60,12 @@ namespace Odd_or_Even
             {
                 Console.WriteLine("Third binary value of "+num+" is 1");
             }
+
+            //Find your weight on the moon
+            Console.WriteLine("Do you want to know what your weight will be on the moon?");
+            Console.WriteLine("Enter your current weight in kg:");
+            int weight = int.Parse(Console.ReadLine());
+            Console.WriteLine("Your weight on the moon will be "+(weight*.17)+" KG's");
             Console.ReadKey();
         }
     }
