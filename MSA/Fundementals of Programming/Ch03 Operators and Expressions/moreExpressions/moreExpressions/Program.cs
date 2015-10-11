@@ -14,8 +14,8 @@ namespace moreExpressions
         
         static void Main(string[] args)
         {
-            //Declare two varialbes
-            int x , y = 0;
+            //Declare varialbes
+            int x , y,z, w, num = 0;
 
             //Get user to enter two values of x and y
             Console.WriteLine("Please enter a number for x axis");
@@ -47,6 +47,19 @@ namespace moreExpressions
             {
                 Console.WriteLine("The coordinates are within the rectangle");
             }
+
+            //Ask user for a four digit number and do various operations on it
+            Console.WriteLine("\n\nPlease enter a four digit number");
+            num = int.Parse(Console.ReadLine());
+            w = num / 1000;
+            x = (num / 100)%10;
+            y = (num / 10)%10;
+            z = num % 10;
+            Console.WriteLine("The sum of the four digits is :\t\t\t"+(w+x+y+z));
+            Console.WriteLine("The numbers in reverse order are:\t\t" +z+y+x+w);
+            Console.WriteLine("When last digit is in the first place:\t\t" +z+w+x+y);
+            Console.WriteLine("When the second and third digits are swapped:\t" +w+y+x+z
+                );
             Console.ReadKey();
         }
     }
