@@ -67,7 +67,21 @@ namespace moreExpressions
 
             //if i and p are positive than the result of the bitwise operation is one
             Console.WriteLine("The {0}th binary digit of {1} is {2}.", position, num, (num&mask)!=0?1:0);
+
+            //We are given the number n, the value v (v = 0 or 1) and the position p.
+            //write a sequence of operations that changes the value of n, so the bit on
+            //the position p has the value of v.
+            Console.WriteLine("\n\nWe are given the number n, the value v(v = 0 or 1) and the position p. write a sequence of operations that changes the value of n, so the bit on the position p has the value of v.);");
+            Console.Write("n = ");
+            num = int.Parse(Console.ReadLine());
+            Console.Write("v = ");
+            i = int.Parse(Console.ReadLine());
+            Console.Write("Offset = ");
+            position = int.Parse(Console.ReadLine());
+            num = num & (i<<position);
+            Console.WriteLine("Value of n has changed to :"+num);
             Console.ReadKey();
+            
         }
     }
 }
