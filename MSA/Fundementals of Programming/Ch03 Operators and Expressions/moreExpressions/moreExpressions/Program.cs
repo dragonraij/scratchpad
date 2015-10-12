@@ -58,8 +58,15 @@ namespace moreExpressions
             Console.WriteLine("The sum of the four digits is :\t\t\t"+(w+x+y+z));
             Console.WriteLine("The numbers in reverse order are:\t\t" +z+y+x+w);
             Console.WriteLine("When last digit is in the first place:\t\t" +z+w+x+y);
-            Console.WriteLine("When the second and third digits are swapped:\t" +w+y+x+z
-                );
+            Console.WriteLine("When the second and third digits are swapped:\t" +w+y+x+z);
+            
+            //Find the value of the fifth binary digit in the number num (counting starts from zero)
+            int position = 5;
+            int i = 00000001;
+            int mask = i << position; //move the first bit left by n positions
+
+            //if i and p are positive than the result of the bitwise operation is one
+            Console.WriteLine("The {0}th binary digit of {1} is {2}.", position, num, (num&mask)!=0?1:0);
             Console.ReadKey();
         }
     }
