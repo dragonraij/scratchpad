@@ -105,6 +105,31 @@ namespace Reading1
             } while (count<5);
 
             Console.WriteLine("The total of the 5 numbers is " +a);
+
+            /*8. Write a program that reads five numbers from the console and prints the
+            greatest of them. */
+            //reuses code from the previous example to get input
+
+            count = a = 0;
+            Console.WriteLine("Enter 5 different numbers to find which is the largest number enterd");
+            do
+            {
+                Console.WriteLine("Please enter a number ({0} more needed)", 5-count);
+                if (int.TryParse(Console.ReadLine(), out c))
+                {
+                    //assign larger value to a and increment counter
+                    a =  c>a? c :a;
+                    count++;
+                }
+                else
+                {
+                    Console.WriteLine("Number not accepted, try again");
+                }
+            } while (count <5);
+
+            //Display results
+            Console.WriteLine("The largest number entered was " + a);
+
                        Console.ReadKey();
         }
     }
