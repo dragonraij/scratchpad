@@ -36,6 +36,17 @@ namespace Reading1
             //Display Results
             Console.WriteLine("The area is {0} and the perimeter is {1}", 3.14*a*a, 2*3.14*a);
 
+
+
+            /*4. Write a program that prints three numbers in three virtual columns
+            on the console. Each column should have a width of 10 characters and
+            the numbers should be left aligned. The first number should be an
+            integer in hexadecimal; the second should be fractional positive; and
+            the third – a negative fraction. The last two numbers have to be
+            rounded to the second decimal place. */
+
+            Console.WriteLine("|{0,-10:x}|{1,-10:F2}|{2,-10:f2}|", a,b,c);
+
             Console.ReadKey();
         }
     }
