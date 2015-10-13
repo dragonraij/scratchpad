@@ -17,7 +17,7 @@ namespace Reading1
         static void Main(string[] args)
         {
             //Declare variables
-            int a, b, c = 0;
+            int a, b, c, count = 0;
             //1. Write a program that reads from the console three numbers of type int and prints their sum.
             Console.WriteLine("Give me three numbers and I will tell you its sum");
             a = int.Parse(Console.ReadLine());
@@ -47,6 +47,24 @@ namespace Reading1
 
             Console.WriteLine("|{0,-10:x}|{1,-10:F2}|{2,-10:f2}|", a,b,c);
 
+
+
+            /*5. Write a program that reads from the console two integer numbers (int)
+            and prints how many numbers between them exist, such that the
+            remainder of their division by 5 is 0. Example: in the range (14, 25)
+            there are 3 such numbers: 15, 20 and 25.
+            In this case uses b and c entered previously*/
+
+            for (int i = b; i <= c; i++)
+            {
+                if (i%5==0)
+                {
+                    count++;
+                }
+            }
+
+            //Display results
+            Console.WriteLine("There are {0} multiples of 5 between {1} and {2}", count, b, c);
             Console.ReadKey();
         }
     }
