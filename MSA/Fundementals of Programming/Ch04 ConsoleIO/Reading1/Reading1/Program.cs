@@ -65,7 +65,17 @@ namespace Reading1
 
             //Display results
             Console.WriteLine("There are {0} multiples of 5 between {1} and {2}", count, b, c);
-            Console.ReadKey();
+
+
+
+            /*6. Write a program that reads two numbers from the console and prints the
+            greater of them.Solve the problem without using conditional
+           statements.*/
+
+            Console.WriteLine("The bigger number of {0} and {1} is {2}", b, c, b>c? b :c);
+
+
+                       Console.ReadKey();
         }
     }
 }
