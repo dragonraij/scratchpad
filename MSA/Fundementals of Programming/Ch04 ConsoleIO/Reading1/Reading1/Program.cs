@@ -75,6 +75,36 @@ namespace Reading1
             Console.WriteLine("The bigger number of {0} and {1} is {2}", b, c, b>c? b :c);
 
 
+
+            /*7. Write a program that reads five integer numbers and prints their
+            sum. If an invalid number is entered the program should prompt the user
+            to enter another number.*/
+
+            //set counter to zero, use variable a as total, make zero
+            count = a = 0;
+
+            Console.WriteLine("Give me five numbers and I will total them up for you");
+
+            do
+            {
+                //prompt for a number
+                Console.WriteLine("Please enter a number ({0} more needed)", 5-count);
+
+                //parse and see if number is valid if so add to total, incement counter otherwise
+                //inform user the input is invalid and to try again
+                if (int.TryParse(Console.ReadLine(), out c))
+                {
+                    a += c;
+                    count++;
+                }
+                else
+                {
+                    Console.WriteLine("The input was not accepted, please try again");
+                }
+
+            } while (count<5);
+
+            Console.WriteLine("The total of the 5 numbers is " +a);
                        Console.ReadKey();
         }
     }
