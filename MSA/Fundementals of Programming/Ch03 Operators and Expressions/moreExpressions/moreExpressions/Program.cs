@@ -79,7 +79,7 @@ namespace moreExpressions
             Console.Write("Offset = ");
             position = int.Parse(Console.ReadLine());
             num = num & (~(1 << position)); //sets the value of bit position i to zero
-            num = num | (i<<position);
+            num = num | (i<<position); //replace the value at point p with value of i
             Console.WriteLine("Value of n has changed to :"+num);
             Console.ReadKey();
             
