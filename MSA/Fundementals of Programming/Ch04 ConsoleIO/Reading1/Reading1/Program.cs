@@ -148,6 +148,17 @@ namespace Reading1
             //Display the total
             Console.WriteLine("The total of the {0} numbers is {1}", a, b);
 
+
+            //10. Write a program that reads an integer number n from the console and
+            // prints all numbers in the range[1…n], each on a separate line.
+
+            Console.WriteLine("I can count, give me a number and I will count up to that");
+            a = int.Parse(Console.ReadLine());
+
+            for (int i = 1; i <= a; i++)
+            {
+                Console.WriteLine(i);
+            }
                                    Console.ReadKey();
         }
     }
