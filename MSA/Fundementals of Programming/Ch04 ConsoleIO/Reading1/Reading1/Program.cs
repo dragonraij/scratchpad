@@ -130,7 +130,25 @@ namespace Reading1
             //Display results
             Console.WriteLine("The largest number entered was " + a);
 
-                       Console.ReadKey();
+
+
+            // 9. Write a program that reads an integer number n from the console. After
+            // that reads n numbers from the console and prints their sum.
+
+            a = b = 0; //a is num of varialbes, b is sum
+            Console.WriteLine("\n How many numbers do you want to sum up?");
+            int.TryParse(Console.ReadLine(), out a); //implement check later
+
+            for (int i = 0; i < a; i++)
+            {
+                Console.Write("Enter a number =>");
+                b += int.Parse(Console.ReadLine()); // add input to the total
+            }
+
+            //Display the total
+            Console.WriteLine("The total of the {0} numbers is {1}", a, b);
+
+                                   Console.ReadKey();
         }
     }
 }
