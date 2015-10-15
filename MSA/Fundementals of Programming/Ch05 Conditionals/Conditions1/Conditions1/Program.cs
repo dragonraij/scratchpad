@@ -113,7 +113,7 @@ namespace Conditions1
 
 
             //. 5.Just use a switch statement to check for first five digits.
-            switch (a)
+            switch (b)
             {
                 case 0: Console.WriteLine("Zero");
                     break;
@@ -130,9 +130,49 @@ namespace Conditions1
                     Console.WriteLine("Four");
                     break;
                 default:
-                    Console.WriteLine("Something bigger than four"+a);
+                    Console.WriteLine("I counnt only till four");
                     break;
             }
+
+
+            //Write a program that, depending on the user’s choice, inputs int, double
+            // or string variable. If the variable is int or double, the program
+            // increases it by 1.If the variable is a string, the program appends "*" at
+            // the end.Print the result at the console. Use switch statement.
+            Console.WriteLine("Please select a variable type:");
+            Console.WriteLine("1=int 2=double 3=string");
+            bool checkin = int.TryParse(Console.ReadLine(), out b);
+            if (!checkin)
+            {
+                Console.WriteLine("No number was entered !");
+            }
+            else
+            {
+                switch (b)
+                {
+                    case 1:
+                        Console.WriteLine("Enter an integer =>");
+                        c =int.Parse(Console.ReadLine())+1;
+                        Console.WriteLine("{0} was entered", c);
+                        break;
+                    case 2:
+                        Console.WriteLine("Enter a double =>");
+                        double dd = double.Parse(Console.ReadLine()) + 1D;
+                        Console.WriteLine("{0} was entered", dd);
+                        break;
+                    case 3:
+                        Console.WriteLine("Enter a string =>");
+                        string ss = Console.ReadLine() +"*";
+                        
+                        Console.WriteLine("{0} was entered", ss);
+                        break;
+                    default:
+                        Console.WriteLine("Invalid selection");
+                        break;
+                }
+
+            }
+
             Console.ReadKey();
 
         }
