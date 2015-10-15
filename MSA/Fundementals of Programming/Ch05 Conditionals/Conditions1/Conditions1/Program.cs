@@ -78,7 +78,38 @@ namespace Conditions1
             }
 
             Console.WriteLine("Largest number is {0}",temp);
-                       Console.ReadKey();
+
+
+
+            // 4.Sort 3 numbers in descending order. Use nested if statements.
+            if (a < b)
+            {
+                if (b<c)
+                {
+
+                }
+                else
+                {
+                    if (a<c)
+                    {
+                        temp = b;
+                        b = c;
+                        c = temp;
+                    }
+                    else
+                    {
+                        temp = a;
+                        a = c;
+                        c = b;
+                        b = temp;
+
+                    }
+                }
+            }
+
+            Console.WriteLine("The three numbers in descending order: {0} {1} {2}", c,b,a);
+
+                      Console.ReadKey();
 
         }
     }
