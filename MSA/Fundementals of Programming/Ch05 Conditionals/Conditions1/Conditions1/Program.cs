@@ -106,10 +106,34 @@ namespace Conditions1
                     }
                 }
             }
-
+            // revisit
+            
             Console.WriteLine("The three numbers in descending order: {0} {1} {2}", c,b,a);
 
-                      Console.ReadKey();
+
+
+            //. 5.Just use a switch statement to check for first five digits.
+            switch (a)
+            {
+                case 0: Console.WriteLine("Zero");
+                    break;
+                case 1:
+                    Console.WriteLine("One");
+                    break;
+                case 2:
+                    Console.WriteLine("Two");
+                    break;
+                case 3:
+                    Console.WriteLine("Three");
+                    break;
+                case 4:
+                    Console.WriteLine("Four");
+                    break;
+                default:
+                    Console.WriteLine("Something bigger than four"+a);
+                    break;
+            }
+            Console.ReadKey();
 
         }
     }
