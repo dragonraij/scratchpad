@@ -159,6 +159,24 @@ namespace Reading1
             {
                 Console.WriteLine(i);
             }
+
+            //11. Write a program that prints on the console the first 100 numbers in the
+            //Fibonacci sequence: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, …
+            Console.WriteLine("I will print the first hundred numbers in the fibonaci series");
+            a = b = 1;// 2nd and third fibo numbers, first one is directly printed
+            c = 0; //temp value to swap previous two numbers of series
+
+            Console.Write("0 1 "); //first two fibonace numbers are 0 and 1 rest is calculated
+
+            for (int i = 0; i < 8; i++)
+            {
+                c = a;
+                a = b;
+                b = a + c; // current fibo is the sum of the lasst two fibo's
+                Console.Write("{0} ", b);
+            }
+
+
                                    Console.ReadKey();
         }
     }
