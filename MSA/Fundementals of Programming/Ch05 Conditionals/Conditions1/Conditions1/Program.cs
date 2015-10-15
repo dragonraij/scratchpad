@@ -49,7 +49,36 @@ namespace Conditions1
                 Console.WriteLine("The number is negative");
             }
 
-            Console.ReadKey();
+
+
+            //3. Write a program that finds the biggest of three integers, using nested
+            //if statements.3.Write a program that finds the biggest of three integers, using nested
+            //if statements.
+            if (a>b)
+            {
+                if (a>c)
+                {
+                    temp = a;
+                }
+                else
+                {
+                    temp = c;
+                }
+            }
+            else
+            {
+                if (b>c)
+                {
+                    temp = b;
+                }
+                else
+                {
+                    temp = c;
+                }
+            }
+
+            Console.WriteLine("Largest number is {0}",temp);
+                       Console.ReadKey();
 
         }
     }
