@@ -163,20 +163,40 @@ namespace Reading1
             //11. Write a program that prints on the console the first 100 numbers in the
             //Fibonacci sequence: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, …
             Console.WriteLine("I will print the first hundred numbers in the fibonaci series");
-            a = b = 1;// 2nd and third fibo numbers, first one is directly printed
-            c = 0; //temp value to swap previous two numbers of series
+            long d,e;// 2nd and third fibo numbers, first one is directly printed
+            d = e = 1;
+            long f = 0; //temp value to swap previous two numbers of series
 
             Console.Write("0 1 "); //first two fibonace numbers are 0 and 1 rest is calculated
 
-            for (int i = 0; i < 8; i++)
+            for (int i = 0; i < 98; i++) // rest of fibo is calculated in loop
             {
-                c = a;
-                a = b;
-                b = a + c; // current fibo is the sum of the lasst two fibo's
-                Console.Write("{0} ", b);
+                f = d;
+                d = e;
+                e = d + f; // current fibo is the sum of the lasst two fibo's
+                Console.Write("{0} ", e);
             }
 
+            //12. Write a program that calculates the sum (with precision of 0.001) of
+            // the following sequence: 1 + 1 / 2 - 1 / 3 + 1 / 4 - 1 / 5 + …
+            float g,h =0.0F; //set total as 0
+            count = 0;
+            Console.WriteLine("I add the following sequence: 1 + 1 / 2 - 1 / 3 + 1 / 4 - 1 / 5 + …");
+            for (int i = 1; i < 10; i++)
+            {
+                g = 1.0F / i;
 
+                //if the difference between current and previous value is > 0.001 update total else break the loop 
+                if (g >= 0.001)
+                {
+                    h += g;
+                }
+                else
+                {
+                    break;
+                }
+            }
+            Console.WriteLine("The total is {0}", h);
                                    Console.ReadKey();
         }
     }
