@@ -136,7 +136,7 @@ namespace Loops1
                     Console.WriteLine("{0, -7} of {1, -10}", card, suit);
                 }
 
-               
+                Console.WriteLine("");
             }
 
 
@@ -144,7 +144,26 @@ namespace Loops1
             //5. Write a program that reads from the console number N and print the sum
             //of the first N members of the Fibonacci sequence: 0, 1, 1, 2, 3, 5, 8,
             //13, 21, 34, 55, 89, 144, 233, 377, …
-            
+
+            //declare variables
+            int previous = 1, current = 1, temp = 0;
+
+            Console.WriteLine("How manyFibonacci numbers do you want?");
+            a= int.Parse(Console.ReadLine());
+
+            //MAnually print the first 3 numbers of the series
+            Console.Write("0, 1, 1");
+            for (int i = 3; i <= a; i++)
+            {
+                temp = previous + current;
+                previous = current;
+                current = temp;
+                //print current with a spacing before
+                Console.Write(", "+current);
+
+            }
+
+            //Write blank line before next problem
                                    Console.ReadKey();
         }
     }
