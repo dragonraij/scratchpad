@@ -182,6 +182,20 @@ namespace Loops1
             }
 
             Console.WriteLine("the factorial is {0}",temp);
+
+            //10. Write a program that reads from the console a positive integer number
+            //N(N < 20) and prints a matrix of numbers as on the figures below:
+            Console.WriteLine("Enter a number n and I will print a n by n matrix");
+            n = int.Parse(Console.ReadLine());
+            for (int i = 1; i < n; i++)
+            {
+                for (int j = i; j < i+n-1; j++)
+                {
+                    Console.Write(j+" ");
+                }
+                Console.WriteLine(" ");
+            }
+
             Console.ReadKey();
         }
     }
