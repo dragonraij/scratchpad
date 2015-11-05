@@ -22,7 +22,7 @@
     </style>
 </head>
 <body>
-    <form id="form1" runat="server">
+    <form id="form1" runat="server" visible="False">
     <div>
     
         <asp:Image ID="Image1" runat="server" ImageUrl="~/assets/PapaBob.png" />
@@ -57,10 +57,13 @@
         </h3>
         <span class="auto-style3"><strong><span class="auto-style4">Save $2.00 when you add Pepperoni, Green Peppers and Anchovies OR Pepperoni, Red Peppers and Onion to your pizza</span></strong></span><br />
         <br />
-        <asp:Button ID="purchaceButton" runat="server" Text="Purchace" />
+        <asp:Button ID="purchaceButton" runat="server" OnClick="purchaceButton_Click" Text="Purchace" />
         <br />
         <br />
-        Total : <asp:Label ID="Label1" runat="server" Text="$0.00"></asp:Label>
+        Total :
+        <asp:Label ID="totalLabel" runat="server" style="font-weight: 700; font-family: Arial, Helvetica, sans-serif" Text="$0.00"></asp:Label>
+&nbsp;
+        <asp:Label ID="Label2" runat="server" style="font-family: Arial, Helvetica, sans-serif; color: #FF9933; font-style: italic" Text="(Discount Applied)"></asp:Label>
         <br />
         <br />
         Sorry, at this time you can only order one pizza online, and pickup only, we need a better website!!<br />

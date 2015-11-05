@@ -9,7 +9,11 @@ namespace CS013_PapaBobsPizza
 {
     public partial class Default : System.Web.UI.Page
     {
-        double price = 0.0;
+        //double sizeCost = 10.0;
+        //double baseCost = 30.0;
+        //double toppingCost = 0.0;
+        //double totalPrice = 0.0;
+
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -18,7 +22,12 @@ namespace CS013_PapaBobsPizza
 
         protected void purchaceButton_Click(object sender, EventArgs e)
         {
-
+            //updateTotal();
         }
+
+     //   protected void updateTotal() 
+       // {
+          //  totalLabel.Text = String.Format("Total: {0:C}", sizeCost+baseCost+toppingCost);
+      //  }
     }
 }
