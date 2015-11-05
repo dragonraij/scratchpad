@@ -19,6 +19,8 @@
         <asp:Button ID="fortuneButton" runat="server" OnClick="fortuneButton_Click" Text="Click me to see your fortune" />
         <br />
         <asp:Label ID="resultLabel" runat="server"></asp:Label>
+        <br />
+        <br />
     
     </div>
     </form>

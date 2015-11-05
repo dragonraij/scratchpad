@@ -17,7 +17,7 @@ namespace MyFirstApp
         protected void fortuneButton_Click(object sender, EventArgs e)
         {
             resultLabel.Text = "At " + ageTextBox.Text + " years old, I would have expected you to have more than " +
-                moneyTextBox.Text + " in your pocket";
+                moneyTextBox.Text + " in your pocket.";
                
         }
     }
