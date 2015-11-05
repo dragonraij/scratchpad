@@ -14,15 +14,32 @@ namespace CS012_NotePreferance
 
         }
 
-        protected void RadioButton3_CheckedChanged(object sender, EventArgs e)
-        {
+       
 
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            if (pencilRadioButton.Checked)
+            {
+                ResultLabel.Text = "So you like making notes with a pencil";
+            }
+            else if (penRadioButton.Checked)
+            {
+                ResultLabel.Text = "So you like making notes with a pen";
+            }
+            else if (tabletRadioButton.Checked)
+            {
+                ResultLabel.Text = "So you like making notes on your tablet";
+            }
+            else if (phoneRadioButton.Checked)
+            {
+                ResultLabel.Text = "So you like making notes on your phone";                
+            }
+            else
+            {
+                ResultLabel.Text = "So you think you are too good to be taking notes";                
+            }
         }
 
-        protected void RadioButton4_CheckedChanged(object sender, EventArgs e)
-        {
 
-
-        }
     }
 }

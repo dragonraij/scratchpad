@@ -12,19 +12,19 @@
     
         Your Note Taking Preferance<br />
         <br />
-        <asp:RadioButton ID="pencilRadioButton" runat="server" Text="Pencil" />
+        <asp:RadioButton ID="pencilRadioButton" runat="server" GroupName="noteOptions" Text="Pencil" />
         <br />
-        <asp:RadioButton ID="penRadioButton" runat="server" Text="Pen" />
+        <asp:RadioButton ID="penRadioButton" runat="server" GroupName="noteOptions" Text="Pen" />
         <br />
-        <asp:RadioButton ID="phoneRadioButton" runat="server" Text="Phone" />
+        <asp:RadioButton ID="phoneRadioButton" runat="server" GroupName="noteOptions" Text="Phone" />
         <br />
-        <asp:RadioButton ID="tabletRadioButton" runat="server" Text="Tablet" />
-        <br />
-        <br />
-        <asp:Button ID="Button1" runat="server" Text=" OK " />
+        <asp:RadioButton ID="tabletRadioButton" runat="server" GroupName="noteOptions" Text="Tablet" />
         <br />
         <br />
-        <asp:Label ID="Label1" runat="server"></asp:Label>
+        <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text=" OK " />
+        <br />
+        <br />
+        <asp:Label ID="ResultLabel" runat="server"></asp:Label>
     
     </div>
     </form>
