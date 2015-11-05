@@ -11,7 +11,22 @@ namespace CS019_EpicSpies
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!Page.IsPostBack)
+            {
+                previousCalendar.SelectedDate = DateTime.Now.Date;
+                startCalendar.SelectedDate = DateTime.Now.Date.AddDays(14);
+                endCalendar.SelectedDate = DateTime.Now.Date.AddDays(21);
+            }
+        }
 
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void previousCalendar_SelectionChanged(object sender, EventArgs e)
+        {
+            startCalendar.SelectedDate = previousCalendar.SelectedDate.AddDays(14);
         }
     }
 }
