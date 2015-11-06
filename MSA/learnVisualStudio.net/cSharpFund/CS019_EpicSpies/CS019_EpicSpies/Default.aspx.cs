@@ -25,6 +25,7 @@ namespace CS019_EpicSpies
                 startCalendar.SelectedDate = DateTime.Now.Date.AddDays(14);
                 endCalendar.SelectedDate = DateTime.Now.Date.AddDays(21);
             }
+            Page.MaintainScrollPositionOnPostBack = true;
         }
 
         protected void Button1_Click(object sender, EventArgs e)
