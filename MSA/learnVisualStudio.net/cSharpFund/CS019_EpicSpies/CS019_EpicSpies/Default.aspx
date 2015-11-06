@@ -47,7 +47,7 @@
             <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Assign Spy" />
         </p>
         <p>
-            <asp:Label ID="Label3" runat="server"></asp:Label>
+            <asp:Label ID="resultLabel" runat="server"></asp:Label>
         </p>
     </form>
 </body>
