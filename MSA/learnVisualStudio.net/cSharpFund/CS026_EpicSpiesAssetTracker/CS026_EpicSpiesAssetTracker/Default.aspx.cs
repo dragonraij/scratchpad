@@ -13,11 +13,11 @@ namespace CS026_EpicSpiesAssetTracker
         {
             if (!Page.IsPostBack)
             {
-                string[] name = new string[0];
+                string[] names = new string[0];
                 int[] elections = new int[0];
                 int[] subterfuges = new int[0];
 
-                ViewState.Add("name", name);
+                ViewState.Add("names", names);
                 ViewState.Add("elections", elections);
                 ViewState.Add("subterfuges",subterfuges);
             }
@@ -25,7 +25,31 @@ namespace CS026_EpicSpiesAssetTracker
 
         protected void asset_Click(object sender, EventArgs e)
         {
+            //retrieve items from viewstate
+            string[] names = (string[])ViewState["names"];
+            int[] elections = (int[])ViewState["elections"];
+            int[] subterfuges = (int[])ViewState["subterfuges"];
 
+            //Increase the sizes of the arrays by one
+            Array.Resize(ref names, names.Length+1);
+            Array.Resize(ref elections, elections.Length + 1);
+            Array.Resize(ref subterfuges, subterfuges.Length + 1);
+
+            //find the position of the last item in the array
+            int lastItem = names.GetUpperBound(0);
+
+            //Add items added by users to arrays
+            names[lastItem] = nameTextBox.Text;
+            elections[lastItem] = int.Parse(electionsTextBox.Text);
+            subterfuges[lastItem] = int.Parse(subterfugeTextBox.Text);
+
+            //display the output
+            resultLabel.Text = string.Format("Total elections rigged is {0}, average subterfuge performed {1:N2}, the last spy added was {2}", elections.Sum(), subterfuges.Average(), names[lastItem]);
+
+            //save arrays in viewstate
+            ViewState["names"] = names;
+            ViewState["elections"] = elections;
+            ViewState["subterfuges"] = subterfuges;
         }
     }
 }

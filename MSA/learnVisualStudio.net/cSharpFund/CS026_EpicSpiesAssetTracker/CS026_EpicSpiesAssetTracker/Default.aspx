@@ -29,7 +29,7 @@
         Acts of Subterfuge Performed :
         <asp:TextBox ID="subterfugeTextBox" runat="server"></asp:TextBox>
         <br />
-        <asp:Button ID="asset" runat="server" Text="Add Asset" />
+        <asp:Button ID="asset" runat="server" OnClick="asset_Click" Text="Add Asset" />
         <br />
         <asp:Label ID="resultLabel" runat="server"></asp:Label>
     
