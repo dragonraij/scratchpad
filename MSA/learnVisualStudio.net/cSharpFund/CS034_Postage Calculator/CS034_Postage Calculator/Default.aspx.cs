@@ -62,13 +62,15 @@ namespace CS034_Postage_Calculator
             if (!valuesEntered()) return;
             //get volume
 
+            int volume = calculateVolume();
             //get shipping multiplier
-
+            resultLabel.Text = volume.ToString();
             //calculate cost
 
             //display result
             
         }
+
 
         private bool valuesEntered()
         {
@@ -89,6 +91,21 @@ namespace CS034_Postage_Calculator
             return true;
         }
 
+
+        private int calculateVolume()
+        {
+            int width = int.Parse(widthTextBox.Text);
+            int height = int.Parse(heightTextBox.Text);
+            //double check this code
+            int length = 0;
+
+            if (!int.TryParse(lengthTextBox.Text, out length))
+            {
+                length = 1;
+            }
+
+            return width * height * length;
+        }
 
 
             //check info
