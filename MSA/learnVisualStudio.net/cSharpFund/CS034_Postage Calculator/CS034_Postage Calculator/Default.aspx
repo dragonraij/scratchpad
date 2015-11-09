@@ -18,20 +18,20 @@
     
         <h2 class="auto-style1">Postage Calculator</h2>
         Width:&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:TextBox ID="widthTextBox" runat="server" OnTextChanged="inputChanged"></asp:TextBox>
+        <asp:TextBox ID="widthTextBox" runat="server" OnTextChanged="inputChanged" AutoPostBack="True"></asp:TextBox>
         <br />
         Height:&nbsp;&nbsp;&nbsp;
-        <asp:TextBox ID="heightTextBox" runat="server" OnTextChanged="inputChanged"></asp:TextBox>
+        <asp:TextBox ID="heightTextBox" runat="server" OnTextChanged="inputChanged" AutoPostBack="True"></asp:TextBox>
         <br />
         Length:&nbsp;&nbsp;&nbsp;
-        <asp:TextBox ID="lengthTextBox" runat="server" OnTextChanged="inputChanged"></asp:TextBox>
+        <asp:TextBox ID="lengthTextBox" runat="server" OnTextChanged="inputChanged" AutoPostBack="True"></asp:TextBox>
         <br />
         <br />
-        <asp:RadioButton ID="groundRadioButton" runat="server" GroupName="shippingMethod" OnCheckedChanged="inputChanged" Text="Ground" />
+        <asp:RadioButton ID="groundRadioButton" runat="server" GroupName="shippingMethod" OnCheckedChanged="inputChanged" Text="Ground" AutoPostBack="True" />
         <br />
-        <asp:RadioButton ID="airRadioButton" runat="server" GroupName="shippingMethod" OnCheckedChanged="inputChanged" Text="Air" />
+        <asp:RadioButton ID="airRadioButton" runat="server" GroupName="shippingMethod" OnCheckedChanged="inputChanged" Text="Air" AutoPostBack="True" />
         <br />
-        <asp:RadioButton ID="nextDayRadioButton" runat="server" GroupName="shippingMethod" OnCheckedChanged="inputChanged" Text="Next Day" />
+        <asp:RadioButton ID="nextDayRadioButton" runat="server" GroupName="shippingMethod" OnCheckedChanged="inputChanged" Text="Next Day" AutoPostBack="True" />
         <br />
         <br />
         <asp:Label ID="resultLabel" runat="server" Text="rer"></asp:Label>
