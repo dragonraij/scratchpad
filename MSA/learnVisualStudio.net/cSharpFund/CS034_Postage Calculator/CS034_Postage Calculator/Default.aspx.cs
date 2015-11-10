@@ -63,15 +63,20 @@ namespace CS034_Postage_Calculator
             //get volume
 
             int volume = calculateVolume();
+            
             //get shipping multiplier
-            resultLabel.Text = volume.ToString();
+            double shippingMultiplier = getShippng();
+            
+
             //calculate cost
+            double cost = volume * shippingMultiplier;
+
 
             //display result
-            
+            resultLabel.Text = string.Format("The shipping cost for your item is {0:C}", cost);
         }
 
-
+      
         private bool valuesEntered()
         {
             //if no value entered in width and height
@@ -108,10 +113,27 @@ namespace CS034_Postage_Calculator
         }
 
 
-            //check info
-        
-            //display result
-        
+        private double getShippng()
+        {
+            if (groundRadioButton.Checked)
+            {
+                return 1.25;
+
+            }
+            else if (airRadioButton.Checked)
+            {
+                return 5.5;
+            }
+            else if (nextDayRadioButton.Checked)
+            {
+                return 7.5;
+            }
+            else
+            {
+                return 0;
+            }
+        }
+         
 
     }
 }
