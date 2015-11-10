@@ -51,5 +51,54 @@ namespace CS034_SlotMachine
             img3Label.Text = spinWheel();
         
         }
+
+        protected void leverButton_Click(object sender, EventArgs e)
+        {
+            int betAmount = int.Parse(betTextBox.Text);
+            //if user has made a bet spin the wheel
+            if (betAmount>0)
+            {
+                spinOutcome();    
+            }
+
+            //calculate winnings
+            int winnings = calculateWinnings(betAmount);
+        }
+
+        private int calculateWinnings(int betAmount)
+        {   
+            //if any bar shows up no prize is paid
+            if (img1Label.Text=="bar" || img2Label.Text=="bar"||img3Label.Text=="bar")
+            {
+                return 0;
+            }
+
+            //if there are 3 sevens you have hit jackpot and the prize is 100 times the bet
+            else if (img1Label.Text=="seven" && img2Label.Text=="seven"&&img3Label.Text=="seven")
+            {
+                return 100 * betAmount;
+            }
+
+            int cherries = countCherries();
+        }
+
+        private int countCherries()
+        {
+            int count = 0;
+            
+            if (img1Label.Text=="cherry")
+        	{
+                count++; 
+	        }
+            if (img2Label.Text == "cherry")
+            {
+                count++;
+            }
+            if (img3Label.Text == "cherry")
+            {
+                count++;
+            }
+            
+        }
     }
 }
