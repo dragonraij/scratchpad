@@ -54,19 +54,33 @@ namespace CS034_SlotMachine
 
         protected void leverButton_Click(object sender, EventArgs e)
         {
-            int betAmount = int.Parse(betTextBox.Text);
-            //if user has made a bet spin the wheel
-            if (betAmount>0)
+            int betAmount = getBetAmount();
+
+            if (betAmount > 0)
             {
-                spinOutcome();    
+                spinOutcome();
+                //calculate winnings
+                int winnings = calculateWinnings(betAmount);
             }
 
-            //calculate winnings
-            int winnings = calculateWinnings(betAmount);
+            
 
 
 
 
+        }
+
+        private int getBetAmount()
+        {
+            //returns the integer value entered
+            if (betTextBox.Text.Length>0)
+            {
+                return int.Parse(betTextBox.Text);
+                
+            }
+            
+            //if no integer entered returns -1 for error
+            return -1;
         }
 
         private int calculateWinnings(int betAmount)
