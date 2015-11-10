@@ -63,6 +63,10 @@ namespace CS034_SlotMachine
 
             //calculate winnings
             int winnings = calculateWinnings(betAmount);
+
+
+
+
         }
 
         private int calculateWinnings(int betAmount)
@@ -79,7 +83,17 @@ namespace CS034_SlotMachine
                 return 100 * betAmount;
             }
 
+            //number of cherries which show up
             int cherries = countCherries();
+
+            //calculate cherry prize
+            switch (cherries)
+            {
+                case 1: return betAmount * 2;
+                case 2: return betAmount * 5;
+                case 3: return betAmount * 8;
+                default: return 0;
+            }
         }
 
         private int countCherries()
@@ -98,6 +112,7 @@ namespace CS034_SlotMachine
             {
                 count++;
             }
+            return count;
             
         }
     }
