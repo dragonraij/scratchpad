@@ -10,6 +10,7 @@ namespace CS034_SlotMachine
     public partial class Default : System.Web.UI.Page
     {
         Random random = new Random();
+        int balance = 100;
         protected void Page_Load(object sender, EventArgs e)
         {
             spinOutcome();
@@ -61,14 +62,15 @@ namespace CS034_SlotMachine
                 spinOutcome();
                 //calculate winnings
                 int winnings = calculateWinnings(betAmount);
+
+                //update balance and winnings
+                updateBalance(winnings, betAmount, balance);
             }
 
-            
-
-
-
-
         }
+
+        
+
 
         private int getBetAmount()
         {
@@ -128,6 +130,13 @@ namespace CS034_SlotMachine
             }
             return count;
             
+        }
+
+        //update balance and display to user
+        private void updateBalance(int winnings, int betAmount, int balance)
+        {
+            winningsLabel.Text = string.Format("Your winnings are : {0:C}", winnings);
+            balanceLabel.Text = string.Format("Your current balance is : {0:C}", balance - betAmount + winnings);
         }
     }
 }

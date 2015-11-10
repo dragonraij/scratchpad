@@ -30,10 +30,10 @@
         <asp:Button ID="leverButton" runat="server" Text="Button" OnClick="leverButton_Click" />
         <br />
         <br />
-        <asp:Label ID="winningsLabel" runat="server" Text="Label"></asp:Label>
+        <asp:Label ID="winningsLabel" runat="server" Text="Your winnings was $0"></asp:Label>
         <br />
         <br />
-        <asp:Label ID="moneyLabel" runat="server" Text="Label"></asp:Label>
+        <asp:Label ID="balanceLabel" runat="server" Text="Your balance is : $100"></asp:Label>
         <br />
         <br />
         1 Cherry - 2x your bet <br/> 2 Cherry - 3x your bet <br/> 3 Cherry - 4x your bet
