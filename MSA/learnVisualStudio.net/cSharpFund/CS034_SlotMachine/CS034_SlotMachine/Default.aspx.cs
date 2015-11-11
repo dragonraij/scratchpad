@@ -26,9 +26,8 @@ namespace CS034_SlotMachine
 
 
         Random random = new Random();
-        private static string spinWheel()
+        private  string spinWheel()
         {
-            Random random = new Random();
             int current = random.Next(0,8);
 
             switch (current)
