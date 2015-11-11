@@ -9,25 +9,27 @@ namespace CS034_SlotMachine
 {
     public partial class Default : System.Web.UI.Page
     {
-        Random random = new Random();
-        int balance = 100;
+        int balance;
         protected void Page_Load(object sender, EventArgs e)
         {
-            spinOutcome();
+            
+            if (!Page.IsPostBack)
+            {
+                
+                balance = 100;
+                spinOutcome();
+                
+            }
 
-            //spin wheel
-            //spin outcome
-            //calculate winnings
-            //update balance
-            //pull lever
 
         }
 
-        
 
+        Random random = new Random();
         private static string spinWheel()
         {
-            int current = 99;
+            Random random = new Random();
+            int current = random.Next(0,8);
 
             switch (current)
             {
