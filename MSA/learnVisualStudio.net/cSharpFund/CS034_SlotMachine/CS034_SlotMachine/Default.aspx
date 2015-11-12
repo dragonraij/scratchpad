@@ -6,8 +6,9 @@
 <head runat="server">
     <title></title>
     <style type="text/css">
-        .auto-style1 {
-            color: #CC9900;
+        .auto-style2 {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #CC3300;
         }
     </style>
 </head>
@@ -15,10 +16,10 @@
     <form id="form1" runat="server">
     <div>
     
-        <h3 class="auto-style1">SuperSlots</h3>
-        <asp:Image ID="reelImage1" runat="server" />
-        <asp:Image ID="reelImage2" runat="server" />
-        <asp:Image ID="reelImage3" runat="server" />
+        <h1 class="auto-style2">SuperSlots</h1>
+        <asp:Image ID="reelImage1" runat="server" BorderColor="#FF3300" BorderStyle="Solid" />
+        <asp:Image ID="reelImage2" runat="server" BorderColor="#FF3300" BorderStyle="Solid" />
+        <asp:Image ID="reelImage3" runat="server" BorderColor="#FF3300" BorderStyle="Solid" />
         <br />
     
         <asp:Label ID="img1Label" runat="server" Text="img1"></asp:Label>
@@ -30,7 +31,7 @@
         <asp:TextBox ID="betTextBox" runat="server"></asp:TextBox>
         <br />
         <br />
-        <asp:Button ID="leverButton" runat="server" Text="Button" OnClick="leverButton_Click" />
+        <asp:Button ID="leverButton" runat="server" Text="Spin the wheel" OnClick="leverButton_Click" />
         <br />
         <br />
         <asp:Label ID="winningsLabel" runat="server" Text="Your winnings was $0"></asp:Label>
@@ -38,10 +39,15 @@
         <br />
         <asp:Label ID="balanceLabel" runat="server" Text="Your balance is : $100"></asp:Label>
         <br />
-        <br />
-        1 Cherry - 2x your bet <br/> 2 Cherry - 3x your bet <br/> 3 Cherry - 4x your bet
-        <br/> 3 7's - 100x your bet<br/>However if you have even one BAR, you win nothing :(
-        <br />
+        <strong>
+        <br class="auto-style2" />
+        </strong><span class="auto-style2"><strong>1 Cherry - 2x your bet </strong></span><strong> <br class="auto-style2"/> </strong><span class="auto-style2"><strong>2 Cherry - 3x your bet </strong></span><strong> <br class="auto-style2"/> </strong><span class="auto-style2"><strong>3 Cherry - 4x your bet
+        </strong></span><strong>
+        <br class="auto-style2"/> </strong><span class="auto-style2"><strong>3 7's - 100x your bet</strong></span><strong><br class="auto-style2"/></strong><span class="auto-style2"><strong>However if you have even one BAR, you win nothing :(
+        </strong></span><strong>
+        <br class="auto-style2" />
+    
+        </strong>
     
     </div>
     </form>

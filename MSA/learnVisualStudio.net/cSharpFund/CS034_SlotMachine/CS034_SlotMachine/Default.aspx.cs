@@ -9,14 +9,13 @@ namespace CS034_SlotMachine
 {
     public partial class Default : System.Web.UI.Page
     {
-        int balance;
+       
         protected void Page_Load(object sender, EventArgs e)
         {
             
             if (!Page.IsPostBack)
             {
-                
-                balance = 100;
+                ViewState.Add("Balance", "100"); 
                 spinOutcome();
                 
             }
@@ -60,16 +59,24 @@ namespace CS034_SlotMachine
         protected void leverButton_Click(object sender, EventArgs e)
         {
             int betAmount = getBetAmount();
-
-            if (betAmount > 0)
+            int balance = int.Parse(ViewState["Balance"].ToString());
+            int winnings = 0;
+            if (betAmount > 0 && balance>0)
             {
                 spinOutcome();
                 //calculate winnings
-                int winnings = calculateWinnings(betAmount);
+                winnings = calculateWinnings(betAmount);
 
-                //update balance and winnings
+                //display balance and winnings
                 updateBalance(winnings, betAmount, balance);
             }
+            else
+            {
+                betTextBox.Text = "Enter Credit";
+            }
+
+            //save balance in viewstate
+            ViewState["Balance"] = balance-betAmount+winnings;
 
         }
 
