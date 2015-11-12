@@ -28,29 +28,34 @@ namespace CS034_SlotMachine
         Random random = new Random();
         private  string spinWheel()
         {
-            int current = random.Next(0,8);
+            int current = random.Next(0,11);
 
             switch (current)
             {
-                case 0: return "zero.jpg";
-                case 1: return "one.jpg";
-                case 2: return "two.jpg";
-                case 3: return "three.jpg";
-                case 4: return "four.jpg";
-                case 5: return "five.jpg";
-                case 6: return "six.jpg";
-                case 7: return "seven.jpg";
-                default: return "zero.jpg";
+                case 0: return "Bar.png";
+                case 1: return "Bell.png";
+                case 2: return "Cherry.png";
+                case 3: return "Clover.png";
+                case 4: return "Diamond.png";
+                case 5: return "HorseShoe.png";
+                case 6: return "Lemon.png";
+                case 7: return "Orange.png";
+                case 8: return "Plum.png";
+                case 9: return "Seven.png";
+                case 10: return "Strawberry.png";
+                default: return "Bar.png";
             }
         }
 
         private void spinOutcome() { 
             
             //update the outcome of the spins to the three images
-
-            img1Label.Text = spinWheel();
-            img2Label.Text = spinWheel();
-            img3Label.Text = spinWheel();
+            reelImage1.ImageUrl = "Images\\" + spinWheel();
+            reelImage2.ImageUrl = "Images\\" + spinWheel();
+            reelImage3.ImageUrl = "Images\\" + spinWheel();
+            img1Label.Text = "Images\\"+spinWheel();
+            img2Label.Text = "Images\\" + spinWheel();
+            img3Label.Text = "Images\\" + spinWheel();
         
         }
 

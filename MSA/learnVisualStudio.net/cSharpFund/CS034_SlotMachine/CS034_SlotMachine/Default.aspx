@@ -16,6 +16,9 @@
     <div>
     
         <h3 class="auto-style1">SuperSlots</h3>
+        <asp:Image ID="reelImage1" runat="server" />
+        <asp:Image ID="reelImage2" runat="server" />
+        <asp:Image ID="reelImage3" runat="server" />
         <br />
     
         <asp:Label ID="img1Label" runat="server" Text="img1"></asp:Label>
