@@ -88,7 +88,9 @@ namespace CS034_SlotMachine
             //returns the integer value entered
             if (betTextBox.Text.Length>0)
             {
-                return int.Parse(betTextBox.Text);
+                int bet;
+                int.TryParse(betTextBox.Text, out bet);
+                return bet;
                 
             }
             
@@ -98,9 +100,7 @@ namespace CS034_SlotMachine
 
         private int calculateWinnings(int betAmount)
         {
-            img1Label.Text = reelImage1.ImageUrl;
-            img2Label.Text = reelImage2.ImageUrl;
-            img3Label.Text = reelImage3.ImageUrl;
+            
             //if any bar shows up no prize is paid
             if (reelImage1.ImageUrl == "Images\\Bar.png" || reelImage2.ImageUrl == "Images\\Bar.png" || reelImage3.ImageUrl == "Images\\Bar.png")
             {
