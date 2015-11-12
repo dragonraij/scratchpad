@@ -53,9 +53,7 @@ namespace CS034_SlotMachine
             reelImage1.ImageUrl = "Images\\" + spinWheel();
             reelImage2.ImageUrl = "Images\\" + spinWheel();
             reelImage3.ImageUrl = "Images\\" + spinWheel();
-            img1Label.Text = "Images\\"+spinWheel();
-            img2Label.Text = "Images\\" + spinWheel();
-            img3Label.Text = "Images\\" + spinWheel();
+           
         
         }
 
@@ -92,15 +90,18 @@ namespace CS034_SlotMachine
         }
 
         private int calculateWinnings(int betAmount)
-        {   
+        {
+            img1Label.Text = reelImage1.ImageUrl;
+            img2Label.Text = reelImage2.ImageUrl;
+            img3Label.Text = reelImage3.ImageUrl;
             //if any bar shows up no prize is paid
-            if (img1Label.Text=="bar" || img2Label.Text=="bar"||img3Label.Text=="bar")
+            if (reelImage1.ImageUrl == "Images\\Bar.png" || reelImage2.ImageUrl == "Images\\Bar.png" || reelImage3.ImageUrl == "Images\\Bar.png")
             {
                 return 0;
             }
 
             //if there are 3 sevens you have hit jackpot and the prize is 100 times the bet
-            else if (img1Label.Text=="seven" && img2Label.Text=="seven"&&img3Label.Text=="seven")
+            else if (reelImage1.ImageUrl == "Images\\Seven.png" && reelImage2.ImageUrl == "Images\\Seven.png" && reelImage3.ImageUrl == "Images\\Seven.png")
             {
                 return 100 * betAmount;
             }
@@ -112,8 +113,8 @@ namespace CS034_SlotMachine
             switch (cherries)
             {
                 case 1: return betAmount * 2;
-                case 2: return betAmount * 5;
-                case 3: return betAmount * 8;
+                case 2: return betAmount * 3;
+                case 3: return betAmount * 4;
                 default: return 0;
             }
         }
@@ -122,15 +123,15 @@ namespace CS034_SlotMachine
         {
             int count = 0;
             
-            if (img1Label.Text=="cherry")
+            if (reelImage1.ImageUrl=="Images\\Cherry.png")
         	{
                 count++; 
 	        }
-            if (img2Label.Text == "cherry")
+            if (reelImage2.ImageUrl == "Images\\Cherry.png")
             {
                 count++;
             }
-            if (img3Label.Text == "cherry")
+            if (reelImage3.ImageUrl == "Images\\Cherry.png")
             {
                 count++;
             }
