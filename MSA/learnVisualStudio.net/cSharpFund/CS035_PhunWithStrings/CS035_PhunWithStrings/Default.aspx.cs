@@ -24,5 +24,11 @@ namespace CS035_PhunWithStrings
             }
              Label1.Text = output;
         }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            string[] names = {"Leia", "Luke", "chewy", "R2D2"};
+
+        }
     }
 }
