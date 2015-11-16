@@ -1,7 +1,14 @@
 ﻿
+@model List<helloMVC.Models.Car>
+
 @{
     ViewBag.Title = "Index";
 }
 
 <h2>Index</h2>
+<h3>@ViewBag.myValue</h3>
 
+@foreach (var car in Model)
+{
+    <p>@car.Id  - @car.Make - @car.Model</p>
+}
