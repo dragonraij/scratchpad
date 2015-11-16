@@ -28,7 +28,13 @@ namespace CS035_PhunWithStrings
         protected void Button2_Click(object sender, EventArgs e)
         {
             string[] names = {"Leia", "Luke", "chewy", "R2D2"};
+            string[] reversed = new string[names.Length];
+            for (int i = 0; i < names.Length; i++)
+            {
+                reversed[reversed.Length-i-1] = names[i];
+            }
 
+            Label3.Text = string.Join(",", reversed);
         }
     }
 }
