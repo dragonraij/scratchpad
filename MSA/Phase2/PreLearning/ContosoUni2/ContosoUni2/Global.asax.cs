@@ -6,7 +6,7 @@ using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 
-namespace ContossoUni2
+namespace ContosoUni2
 {
     public class MvcApplication : System.Web.HttpApplication
     {

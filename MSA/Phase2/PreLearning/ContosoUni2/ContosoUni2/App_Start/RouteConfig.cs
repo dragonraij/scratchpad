@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace ContossoUni2
+namespace ContosoUni2
 {
     public class RouteConfig
     {

@@ -1,9 +1,11 @@
 ﻿using ContosoUniversity.Models;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
+using MySql.Data.Entity;
 
 namespace ContosoUniversity.DAL
 {
+    [DbConfigurationType(typeof(MySqlEFConfiguration))]
     public class SchoolContext : DbContext
     {
 
@@ -20,4 +22,4 @@ namespace ContosoUniversity.DAL
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
         }
     }
-}
+}       

@@ -9,7 +9,7 @@ using System.Web.Mvc;
 using ContosoUniversity.DAL;
 using ContosoUniversity.Models;
 
-namespace ContossoUni2.Controllers
+namespace ContosoUni2.Controllers
 {
     public class EnrollmentController : Controller
     {

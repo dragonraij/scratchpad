@@ -9,12 +9,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{98F849A0-F676-47B7-B2AF-EF1AD7321075}</ProjectGuid>
+    <ProjectGuid>{500837FA-CBA9-4301-ACCB-0EE1E4CA86FE}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ContossoUni2</RootNamespace>
-    <AssemblyName>ContossoUni2</AssemblyName>
+    <RootNamespace>ContosoUni2</RootNamespace>
+    <AssemblyName>ContosoUni2</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
@@ -57,6 +57,14 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MySql.Data, Version=6.9.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.6.9.8\lib\net45\MySql.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MySql.Data.Entity.EF6, Version=6.9.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.Entity.6.9.8\lib\net45\MySql.Data.Entity.EF6.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -136,6 +144,15 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201511190525509_InitialCreate.cs" />
+    <Compile Include="Migrations\201511190525509_InitialCreate.Designer.cs">
+      <DependentUpon>201511190525509_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201511190703515_AddTables.cs" />
+    <Compile Include="Migrations\201511190703515_AddTables.Designer.cs">
+      <DependentUpon>201511190703515_AddTables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Course.cs" />
     <Compile Include="Models\Enrollment.cs" />
     <Compile Include="Models\Student.cs" />
@@ -150,6 +167,8 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Properties\PublishProfiles\contosso2 - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\contosso2 - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -181,16 +200,16 @@
     <Content Include="Views\Student\Details.cshtml" />
     <Content Include="Views\Student\Edit.cshtml" />
     <Content Include="Views\Student\Index.cshtml" />
-    <Content Include="Views\Course\Create.cshtml" />
-    <Content Include="Views\Course\Delete.cshtml" />
-    <Content Include="Views\Course\Details.cshtml" />
-    <Content Include="Views\Course\Edit.cshtml" />
-    <Content Include="Views\Course\Index.cshtml" />
     <Content Include="Views\Enrollment\Create.cshtml" />
     <Content Include="Views\Enrollment\Delete.cshtml" />
     <Content Include="Views\Enrollment\Details.cshtml" />
     <Content Include="Views\Enrollment\Edit.cshtml" />
     <Content Include="Views\Enrollment\Index.cshtml" />
+    <Content Include="Views\Course\Create.cshtml" />
+    <Content Include="Views\Course\Delete.cshtml" />
+    <Content Include="Views\Course\Details.cshtml" />
+    <Content Include="Views\Course\Edit.cshtml" />
+    <Content Include="Views\Course\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -202,6 +221,14 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201511190525509_InitialCreate.resx">
+      <DependentUpon>201511190525509_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511190703515_AddTables.resx">
+      <DependentUpon>201511190703515_AddTables.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -219,9 +246,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>50189</DevelopmentServerPort>
+          <DevelopmentServerPort>49789</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:50189/</IISUrl>
+          <IISUrl>http://localhost:49789/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

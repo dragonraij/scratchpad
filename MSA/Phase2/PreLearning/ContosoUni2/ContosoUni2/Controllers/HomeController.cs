@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace ContossoUni2.Controllers
+namespace ContosoUni2.Controllers
 {
     public class HomeController : Controller
     {

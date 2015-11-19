@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 
-namespace ContossoUni2
+namespace ContosoUni2
 {
     public class FilterConfig
     {
