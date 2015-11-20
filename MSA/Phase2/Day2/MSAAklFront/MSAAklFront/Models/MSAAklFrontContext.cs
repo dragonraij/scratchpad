@@ -22,5 +22,7 @@ namespace MSAAklFront.Models
         public System.Data.Entity.DbSet<MSAAklFront.Models.Student> Students { get; set; }
 
         public System.Data.Entity.DbSet<MSAAklFront.Models.Course> Courses { get; set; }
+
+        public System.Data.Entity.DbSet<MSAAklFront.Models.Enrollment> Enrollments { get; set; }
     }
 }

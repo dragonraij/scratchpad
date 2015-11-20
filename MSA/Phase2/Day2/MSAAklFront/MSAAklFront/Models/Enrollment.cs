@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -18,9 +19,9 @@ namespace MSAAklFront.Models
 
         public Grade? Grade { get; set; }
 
-       // [JsonIgnore]
-       // public virtual Course Course { get; set; }
-       // [JsonIgnore]
-       // public virtual Student Student { get; set; }
+       [JsonIgnore]
+       public virtual Course Course { get; set; }
+       [JsonIgnore]
+       public virtual Student Student { get; set; }
     }
 }
