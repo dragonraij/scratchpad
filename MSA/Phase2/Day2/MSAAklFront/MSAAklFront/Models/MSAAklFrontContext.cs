@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Web;
 
@@ -14,9 +15,25 @@ namespace MSAAklFront.Models
         // automatically whenever you change your model schema, please use data migrations.
         // For more information refer to the documentation:
         // http://msdn.microsoft.com/en-us/data/jj591621.aspx
+
+        public class MyConfiguration : DbMigrationsConfiguration<MSAAklFrontContext>
+        {
+            public MyConfiguration() {
+                //enable migrations so db knows how to update based on model
+                this.AutomaticMigrationsEnabled = true;
+
+                this.AutomaticMigrationDataLossAllowed = true;
+            }
+
+            //Seed database with dummy data
+
+
+
+        }
     
         public MSAAklFrontContext() : base("name=MSAAklFrontContext")
         {
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<MSAAklFrontContext, MyConfiguration>());
         }
 
         public System.Data.Entity.DbSet<MSAAklFront.Models.Student> Students { get; set; }
