@@ -3,9 +3,37 @@
 <head>
     <title>Jquery Demonstration</title>
 	<meta charset="utf-8" />
+    <link href="css/fakeloader.css" rel="stylesheet" />
+
 </head>
 <body>
+    <button id="sweetalert">click Me</button>
+    <div id="fakeLoader"></div>
     <!-- Include jquery Code-->
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="js/fakeloader.min.js"></script>
+    <link href="css/sweetalert.css" rel="stylesheet" />
+    <link href="css/fakeloader.css" rel="stylesheet" />
+    <script src="js/sweetalert.min.js"></script>
+    <!-- Fakeloader.js code-->
+    <script type="text/javascript">
+$("#fakeloader").fakeLoader({
+timeToHide:1200, //Time in milliseconds for fakeLoader disappear
+zIndex:"999",//Default zIndex
+spinner:"spinner1",//Options: 'spinner1', 'spinner2', 'spinner3', 'spinner4', 'spinner5', 'spinner6', 'spinner7'
+bgColor:"#2ecc71", //Hex, RGB or RGBA colors
+imagePath:"yourPath/customizedImage.gif" //If you want can you insert your custom image
+});
+    </script>
+    <script src="js/sweetalert.min.js"></script>
+
+
+    <script>
+
+        $("#sweetalert").click(function(){
+        swal("Hello World");
+        });
+    </script>
 </body>
 </html>
