@@ -7,6 +7,7 @@ using System.Web;
 
 namespace MSAAklFront.Models
 {
+    [DbConfigurationType(typeof(MySql.Data.Entity.MySqlEFConfiguration))]
     public class MSAAklFrontContext : DbContext
     {
         // You can add custom code to this file. Changes will not be overwritten.

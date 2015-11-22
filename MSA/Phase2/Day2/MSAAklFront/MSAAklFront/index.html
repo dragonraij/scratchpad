@@ -9,9 +9,26 @@
     <script src="scripts/bootstrap.min.js"></script>
     <script src="scripts/index.js"></script>
     <script src="scripts/StudentModule.js"></script>
+    <script type="text/javascript">
+    
+  var appInsights=window.appInsights||function(config){
+    function r(config){t[config]=function(){var i=arguments;t.queue.push(function(){t[config].apply(t,i)})}}var t={config:config},u=document,e=window,o="script",s=u.createElement(o),i,f;for(s.src=config.url||"//az416426.vo.msecnd.net/scripts/a/ai.0.js",u.getElementsByTagName(o)[0].parentNode.appendChild(s),t.cookie=u.cookie,t.queue=[],i=["Event","Exception","Metric","PageView","Trace"];i.length;)r("track"+i.pop());return r("setAuthenticatedUserContext"),r("clearAuthenticatedUserContext"),config.disableExceptionTracking||(i="onerror",r("_"+i),f=e[i],e[i]=function(config,r,u,e,o){var s=f&&f(config,r,u,e,o);return s!==!0&&t["_"+i](config,r,u,e,o),s}),t
+    }({
+        instrumentationKey:"bb631e53-313c-4406-8b96-737afc2a6b75"
+    });
 
+    window.appInsights=appInsights;
+    appInsights.trackPageView();
+    </script>
+    <script src="Scripts/facebooklogin.js"></script>
 </head>
 <body>
+    <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+    </fb:login-button>
+
+    <div id="status">
+    </div>
+
     <header>
         <nav class="navbar navbar-inverse">
             <div class="container-fluid">
@@ -29,7 +46,7 @@
                     <tr>
                         <th>Last Name</th>
                         <th>First Name</th>
-                        <th>Country</th>
+                        <th>Enrolment</th>
                     </tr>       
                 </thead>
                 <tbody id="tblstudentcontent">

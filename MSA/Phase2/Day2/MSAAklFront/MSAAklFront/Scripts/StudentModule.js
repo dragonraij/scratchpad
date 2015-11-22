@@ -8,8 +8,8 @@ var StudentModule = (function () {
 
             $.ajax({ 
                 type: "GET",
-                dataType: "jsonp",
-                url: "http://api.uinames.com/?amount=25",
+                dataType: "json",
+                url: "https://rajday2.azurewebsites.net/api/Students",
                 success: function(data){        
                     console.log(data);
                     callback(data);

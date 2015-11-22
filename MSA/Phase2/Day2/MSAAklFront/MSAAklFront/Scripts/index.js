@@ -23,15 +23,15 @@ function loadStudents(){
 
             // Add the columns in the row (td / data cells)
             var lastnamecol = document.createElement('td');
-            lastnamecol.innerHTML = students[i].surname;
+            lastnamecol.innerHTML = students[i].LastName;
             row.appendChild(lastnamecol);
 
             var firstnamecol = document.createElement('td');
-            firstnamecol.innerHTML = students[i].name;
+            firstnamecol.innerHTML = students[i].FirstMidName;
             row.appendChild(firstnamecol);
 
             var enrollmentdatecol = document.createElement('td');
-            enrollmentdatecol.innerHTML = students[i].country;
+            enrollmentdatecol.innerHTML = students[i].EnrollmentDate;
             row.appendChild(enrollmentdatecol);
             
             // Append the row to the end of the table
