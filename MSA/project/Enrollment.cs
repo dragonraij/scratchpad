@@ -18,7 +18,7 @@ namespace ContosoUniversity.Models
         public int PaperSemester {get; set;}
 
         public Grade? Grade { get; set; }
-        public Status? Status {get; set;}
+        public Status Status {get; set;}
 
         public virtual Course Course { get; set; }
         public virtual Student Student { get; set; }
