@@ -1,4 +1,20 @@
 ﻿@{
+    var total = 0;
+    var totalMessage = "";
+    if (IsPost)
+    {
+
+        // Retrieve the numbers that the user entered.
+        var num1 = Request["text1"];
+        var num2 = Request["text2"];
+
+        // Convert the entered strings into integers numbers and add.
+        total = total+5;
+        totalMessage = "Total = " + total;
+    }
+}
+
+@{
     ViewBag.Title = "Home Page";
 }
 
@@ -9,14 +25,29 @@
 </div>
 
 <div class="row">
+
     <div class="col-md-12">
-        <h2>Getting started</h2>
+        <h2>Play With Me</h2>
         <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
+            MVC is a fun tool, the more you play with it the more of a friend it will become to you
         </p>
         <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+    </div>
+    <div>
+        <p>Enter two whole numbers and then click <strong>Add</strong>.</p>
+        <form action="" method="post">
+            <p>
+                <label for="text1">First Number:</label>
+                <input type="text" name="text1" />
+            </p>
+            <p>
+                <label for="text2">Second Number:</label>
+                <input type="text" name="text2" />
+            </p>
+            <p><input type="submit" value="Add" /></p>
+        </form>
+
+        <p>@totalMessage</p>
     </div>
     <div class="col-md-4">
         <h2>Get more libraries</h2>
@@ -26,6 +57,6 @@
     <div class="col-md-4">
         <h2>Web Hosting</h2>
         <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+        <p><a class="btn btn-success" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
     </div>
 </div>
