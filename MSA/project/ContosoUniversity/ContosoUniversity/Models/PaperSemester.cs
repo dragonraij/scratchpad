@@ -24,7 +24,7 @@ namespace ContosoUniversity.Models
 
 
         public virtual Lecturer? Lecturer { get; set; }
-
+        public virtual ICollection<Assessment> Assessments{get; set;}
         public virtual ICollection<Enrollment> Enrollments { get; set; }
     }
 }
