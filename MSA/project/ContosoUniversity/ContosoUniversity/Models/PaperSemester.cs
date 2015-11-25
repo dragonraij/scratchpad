@@ -13,13 +13,13 @@ namespace ContosoUniversity.Models
 
     public class PaperSemester
     {
-       [Key, Column(Order =0)]
+        [Key, Column(Order =0)]
         public DateTime Year { get; set; }
 
-        [Key, Column(Order = 0)]
+        [Key, Column(Order = 1)]
         public Semester Semester { get; set; }
 
-        [Key, Column(Order = 0)]
+        [Key, Column(Order = 2)]
         public Paper Paper { get; set; }
 
 
