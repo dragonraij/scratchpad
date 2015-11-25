@@ -8,7 +8,7 @@ namespace ContosoUniversity.Models
         public int ID { get; set; }
         public string LastName { get; set; }
         public string FirstName { get; set; }
-        public Text About { get; set; }
+        public string About { get; set; }
         
         public virtual ICollection<Enrollment> Enrollments { get; set; }
     }
