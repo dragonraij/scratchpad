@@ -15,7 +15,7 @@ namespace ContosoUniversity.Models
         public int EnrollmentID { get; set; }
         public int CourseID { get; set; }
         public int StudentID { get; set; }
-        public int PaperSemester {get; set;}
+        public int PaperSemesterID {get; set;}
 
         public Grade? Grade { get; set; }
         public Status Status {get; set;}
