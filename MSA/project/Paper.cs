@@ -18,7 +18,7 @@ namespace ContosoUniversity.Models
     public class Paper
     {
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int ID { get; set; }
+        public int PaperID { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
         public Department Department{ get; set;}
