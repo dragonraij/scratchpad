@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace ContosoUniversity.Models
 {
     public class Student
     {
         public int StudentID { get; set; }
+        [Required, MaxLength(40, ErrorMessage ="Name is too long, please use less than 40 characters")]
         public string LastName { get; set; }
+        [Required, MaxLength(40)]
         public string FirstName { get; set; }
         public string About { get; set; }
 
