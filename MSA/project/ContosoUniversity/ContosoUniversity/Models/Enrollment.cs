@@ -1,4 +1,6 @@
-﻿namespace ContosoUniversity.Models
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace ContosoUniversity.Models
 {
     public enum Grade
     {
@@ -12,6 +14,7 @@
 
     public class Enrollment
     {
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int EnrollmentID { get; set; }
    //     public int StudentAssessmentID { get; set; }
         public int StudentID { get; set; }
