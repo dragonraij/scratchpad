@@ -9,10 +9,12 @@ namespace ContosoUniversity.Models
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int StudentID { get; set; }
+
         [Required, MaxLength(40, ErrorMessage ="Name is too long, please use less than 40 characters")]
         public string LastName { get; set; }
-        [Required, MaxLength(40)]
+        [Required, MaxLength(40, ErrorMessage = "Name is too long, please use less than 40 characters")]
         public string FirstName { get; set; }
+
         public string About { get; set; }
 
 

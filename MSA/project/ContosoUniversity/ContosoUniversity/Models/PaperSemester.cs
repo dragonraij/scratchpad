@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ContosoUniversity.Models
@@ -11,14 +13,17 @@ namespace ContosoUniversity.Models
 
     public class PaperSemester
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int PaperSemesterID { get; set; }
+       [Key, Column(Order =0)]
         public DateTime Year { get; set; }
+
+        [Key, Column(Order = 0)]
         public Semester Semester { get; set; }
+
+        [Key, Column(Order = 0)]
         public Paper Paper { get; set; }
 
 
-        public virtual Lecturer Lecturer { get; set; }
+        public virtual Lecturer? Lecturer { get; set; }
 
         public virtual ICollection<Enrollment> Enrollments { get; set; }
     }

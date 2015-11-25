@@ -16,7 +16,7 @@ namespace ContosoUniversity.Models
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int EnrollmentID { get; set; }
-   //     public int StudentAssessmentID { get; set; }
+   //   public int StudentAssessmentID { get; set; }
         public int StudentID { get; set; }
         public int PaperSemesterID { get; set; }
 
