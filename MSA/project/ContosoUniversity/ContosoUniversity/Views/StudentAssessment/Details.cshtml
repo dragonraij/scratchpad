@@ -1,0 +1,42 @@
+﻿@model ContosoUniversity.Models.StudentAssessment
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>StudentAssessment</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SubmissionTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SubmissionTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Marks)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Marks)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SubmissionLink)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SubmissionLink)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.StudentAssessmentID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
