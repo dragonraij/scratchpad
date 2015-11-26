@@ -16,6 +16,8 @@ namespace ContosoUniversity.Models
         ErrorMessage = "Enter valid web address")]
         public string SubmissionLink { get; set; }
 
+        //reference foreign key
+        public int EnrollmentID { get; set; }
         public virtual Enrollment Enrollment { get; set; }
     }
 }

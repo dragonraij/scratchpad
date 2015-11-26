@@ -19,11 +19,13 @@ namespace ContosoUniversity.Models
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int EnrollmentID { get; set; }
-
-
+        
         public Grade? Grade { get; set; }
         [Required]
         public Status Status { get; set; }
+
+        public string CourseID { get; set; }
+        public int StudentID { get; set; }
 
         public virtual ICollection<StudentAssessment> StudentAssessments { get; set; }
         public virtual Student Student { get; set; }

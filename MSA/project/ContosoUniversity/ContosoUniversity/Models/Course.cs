@@ -41,8 +41,10 @@ namespace ContosoUniversity.Models
         [RegularExpression(@"(?:([^:/?#]+):)?(?://([^/?#]*))?([^?#]*\.(?:jp?g|gif|png))(?:\?([^#]*))?(?:#(.*))?", ErrorMessage = "Enter a url to a picture")]
         public string CoursePic { get; set; }
 
+        // reference foreign keys
         public virtual ICollection<Enrollment> Enrollments { get; set; }
         public virtual ICollection<Assessment> Assessments { get; set; }
+        public int LecturerID { get; set; }
         public virtual Lecturer Lecturer { get; set; }
     }
 }

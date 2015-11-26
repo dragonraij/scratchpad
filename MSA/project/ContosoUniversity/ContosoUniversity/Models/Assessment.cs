@@ -25,6 +25,7 @@ namespace ContosoUniversity.Models
         [Column(TypeName = "Date")]
         public DateTime DueDate { get; set; }
 
+        public string CourseID { get; set; }
 
         public virtual Course Course { get; set; }
     }
