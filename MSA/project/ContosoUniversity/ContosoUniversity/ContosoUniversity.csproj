@@ -192,6 +192,10 @@
     <Compile Include="Migrations\201511260520374_InitialCreate.Designer.cs">
       <DependentUpon>201511260520374_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201511260819025_UpdateFields.cs" />
+    <Compile Include="Migrations\201511260819025_UpdateFields.Designer.cs">
+      <DependentUpon>201511260819025_UpdateFields.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Assessment.cs" />
@@ -307,6 +311,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201511260520374_InitialCreate.resx">
       <DependentUpon>201511260520374_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511260819025_UpdateFields.resx">
+      <DependentUpon>201511260819025_UpdateFields.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
