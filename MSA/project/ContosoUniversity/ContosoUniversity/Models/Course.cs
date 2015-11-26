@@ -29,7 +29,7 @@ namespace ContosoUniversity.Models
         ErrorMessage = "Course ID must be in the format XXnnn eg CS101"),
         Required(AllowEmptyStrings = false, ErrorMessage = "Course ID is required")]
 
-        public int CourseID { get; set; }
+        public string CourseID { get; set; }
         [StringLength(30,
         ErrorMessage = "Title must be less than 30 characters")]
         public string Title { get; set; }
