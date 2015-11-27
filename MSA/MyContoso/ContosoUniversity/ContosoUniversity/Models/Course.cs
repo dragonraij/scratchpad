@@ -16,8 +16,6 @@ namespace ContosoUniversity.Models
         [Range(0, 5)]
         public int Credits { get; set; }
 
-        public int DepartmentID { get; set; }
-
         public virtual ICollection<Enrollment> Enrollments { get; set; }
         public virtual ICollection<Lecturer> Lecturers { get; set; }
     }

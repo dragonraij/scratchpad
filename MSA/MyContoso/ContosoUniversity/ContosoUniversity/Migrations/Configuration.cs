@@ -1,20 +1,21 @@
 namespace ContosoUniversity.Migrations
 {
     using ContosoUniversity.Models;
+    using ContosoUniversity.DAL;
     using System;
     using System.Collections.Generic;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<ContosoUniversity.DAL.SchoolContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<SchoolContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(ContosoUniversity.DAL.SchoolContext context)
+        protected override void Seed(SchoolContext context)
         {
             var students = new List<Student>
             {
@@ -33,23 +34,62 @@ namespace ContosoUniversity.Migrations
                 new Student { FirstMidName = "Laura",    LastName = "Norman",
                     EnrollmentDate = DateTime.Parse("2013-09-01") },
                 new Student { FirstMidName = "Nino",     LastName = "Olivetto",
-                    EnrollmentDate = DateTime.Parse("2005-08-11") }
+                    EnrollmentDate = DateTime.Parse("2005-09-01") }
             };
+
+
             students.ForEach(s => context.Students.AddOrUpdate(p => p.LastName, s));
             context.SaveChanges();
 
+            var lecturers = new List<Lecturer>
+            {
+                new Lecturer { FirstMidName = "Kim",     LastName = "Abercrombie", Bio="Kim has done his PhD in Contosso and is a world leader in his field",
+                 Picture="images/placeholder.jpg"},
+                new Lecturer { FirstMidName = "Fadi",    LastName = "Fakhouri",
+                   Bio="Kim has done his PhD in Contosso and is a world leader in his field",
+                 Picture="images/placeholder.jpg"},
+                new Lecturer { FirstMidName = "Roger",   LastName = "Harui",
+                    Bio="Kim has done his PhD in Contosso and is a world leader in his field",
+                 Picture="images/placeholder.jpg"},
+                new Lecturer { FirstMidName = "Candace", LastName = "Kapoor",
+                    Bio="Kim has done his PhD in Contosso and is a world leader in his field",
+                 Picture="images/placeholder.jpg"},
+                new Lecturer { FirstMidName = "Roger",   LastName = "Zheng",
+                    Bio="Kim has done his PhD in Contosso and is a world leader in his field",
+                 Picture="images/placeholder.jpg"}
+            };
+            lecturers.ForEach(s => context.Lecturers.AddOrUpdate(p => p.LastName, s));
+            context.SaveChanges();
+
+           
+
             var courses = new List<Course>
             {
-                new Course {CourseID = 1050, Title = "Chemistry",      Credits = 3, },
-                new Course {CourseID = 4022, Title = "Microeconomics", Credits = 3, },
-                new Course {CourseID = 4041, Title = "Macroeconomics", Credits = 3, },
-                new Course {CourseID = 1045, Title = "Calculus",       Credits = 4, },
-                new Course {CourseID = 3141, Title = "Trigonometry",   Credits = 4, },
-                new Course {CourseID = 2021, Title = "Composition",    Credits = 3, },
-                new Course {CourseID = 2042, Title = "Literature",     Credits = 4, }
+                new Course {CourseID = 1050, Title = "Chemistry",      Credits = 3     
+                },
+                new Course {CourseID = 4022, Title = "Microeconomics", Credits = 3
+                  
+                },
+                new Course {CourseID = 4041, Title = "Macroeconomics", Credits = 3
+                  
+                },
+                new Course {CourseID = 1045, Title = "Calculus",       Credits = 4
+                  
+                },
+                new Course {CourseID = 3141, Title = "Trigonometry",   Credits = 4
+                 
+                },
+                new Course {CourseID = 2021, Title = "Composition",    Credits = 3
+                 
+                },
+                new Course {CourseID = 2042, Title = "Literature",     Credits = 4
+                 
+                },
             };
-            courses.ForEach(s => context.Courses.AddOrUpdate(p => p.Title, s));
+            courses.ForEach(s => context.Courses.AddOrUpdate(p => p.CourseID, s));
             context.SaveChanges();
+
+            
 
             var enrollments = new List<Enrollment>
             {
@@ -122,5 +162,7 @@ namespace ContosoUniversity.Migrations
             }
             context.SaveChanges();
         }
+
+      
     }
 }
