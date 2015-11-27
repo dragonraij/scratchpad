@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Newtonsoft.Json;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -16,7 +17,9 @@ namespace ContosoUniversity.Models
         [Range(0, 5)]
         public int Credits { get; set; }
 
+        [JsonIgnore]
         public virtual ICollection<Enrollment> Enrollments { get; set; }
+        [JsonIgnore]
         public virtual ICollection<Lecturer> Lecturers { get; set; }
     }
 }

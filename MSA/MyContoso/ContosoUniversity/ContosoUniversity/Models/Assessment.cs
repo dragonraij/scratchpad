@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -23,6 +24,7 @@ namespace ContosoUniversity.Models
         public string SubmissionLink { get; set; }
         public decimal? Marks { get; set; }
 
+        [JsonIgnore]
         public virtual Enrollment Enrollment { get; set; }
         
 
