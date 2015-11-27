@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Auckland University of Contoso</title>
     @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+        @Scripts.Render("~/bundles/modernizr")
+        <script src="~/Scripts/FaceBook.js"></script>
+    
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -26,6 +28,7 @@
                     <li>@Html.ActionLink("Courses", "Index", "Course")</li>
                     <li>@Html.ActionLink("Instructors", "Index", "Instructor")</li>
                     <li>@Html.ActionLink("Departments", "Index", "Department")</li>
+                    
                 </ul>
             </div>
         </div>
@@ -35,6 +38,16 @@
         <hr />
         <footer>
             <p>&copy; @DateTime.Now.Year - Auckland University of Contoso</p>
+            <div class="fb-like"
+                 data-share="true"
+                 data-width="450"
+                 data-show-faces="true">
+            </div>
+            <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+            </fb:login-button>
+
+            <div id="status">
+            </div>
         </footer>
     </div>
 
