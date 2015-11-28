@@ -196,6 +196,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Adventure.css" />
     <Content Include="Content\bootstrap1.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -203,6 +204,16 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="images\forestpath.jpg" />
+    <Content Include="images\grass.png" />
+    <Content Include="images\huge_bg.jpg" />
+    <Content Include="images\jIqriao.gif" />
+    <Content Include="images\kurama.png" />
+    <Content Include="images\landscape.png" />
+    <Content Include="images\leaves.png" />
+    <Content Include="images\minato.png" />
+    <Content Include="images\obito.png" />
+    <Content Include="Scripts\Adventure.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Properties\PublishProfiles\myContosouni - FTP.pubxml" />
@@ -262,7 +273,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="images\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

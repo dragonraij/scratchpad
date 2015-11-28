@@ -7,6 +7,8 @@
     @Styles.Render("~/Content/css")
         @Scripts.Render("~/bundles/modernizr")
         <script src="~/Scripts/FaceBook.js"></script>
+    <link href="~/Content/Adventure.css" rel="stylesheet" />
+    <script src="~/Scripts/Adventure.js"></script>
     
 </head>
 <body>
@@ -36,7 +38,7 @@
     <div class="container body-content">
         @RenderBody()
         <hr />
-        <footer>
+        <footer class="navbar, navbar-fixed-bottom" >
             <p>&copy; @DateTime.Now.Year - Auckland University of Contoso</p>
             <div class="fb-like"
                  data-share="true"
@@ -50,7 +52,7 @@
             </div>
         </footer>
     </div>
-
+    @Scripts.Render("~/bundles/adventure")
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)

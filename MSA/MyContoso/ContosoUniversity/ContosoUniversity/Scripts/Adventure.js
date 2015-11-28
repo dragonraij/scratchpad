@@ -1,0 +1,6 @@
+﻿
+
+
+	$(function(){
+	    $('#scene').parallax();
+	});
