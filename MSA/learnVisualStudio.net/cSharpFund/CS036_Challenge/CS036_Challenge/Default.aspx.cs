@@ -14,17 +14,29 @@ namespace CS036_Challenge
         protected void Page_Load(object sender, EventArgs e)
         {
             //used to calculate damage amount
-            Random damage = new Random();
+            Dice currentDice = new Dice();
 
             //create 2 character classes and assign value
             Charact hero = new Charact();
             Charact monster = new Charact();
-            hero.Name = "Galleon"; hero.Health = 99; hero.DamageMax = 10; hero.Attackbonus = 3;
-            monster.Name = "Garados"; monster.Health = 80; monster.DamageMax = 10; monster.Attackbonus = 3;
+            hero.Name = "Galleon"; hero.Health = 99; hero.DamageMax = 10; hero.Attackbonus = true;
+            monster.Name = "Garados"; monster.Health = 80; monster.DamageMax = 10; monster.Attackbonus = fal;
 
+
+            //If a character has attack bonus they get an extra attack in begining
+            if (hero.Attackbonus)
+            {
+              monster.Defend(hero.Attack(currentDice));   
+            }
+
+            if (monster.Attackbonus)
+            {
+                hero.Defend(monster.Attack(currentDice));
+                
+            }
             //Calculate Damage
-            hero.Defend(monster.Attack());
-            monster.Defend(hero.Attack());
+            hero.Defend(monster.Attack(currentDice));
+            monster.Defend(hero.Attack(currentDice));
 
             //Display results
             heroLabel.Text = String.Format("{0} health remaining is {1}", hero.Name, hero.Health);
@@ -44,13 +56,13 @@ namespace CS036_Challenge
             public string Name { get; set; }
             public int Health { get; set; }
             public int DamageMax { get; set; }
-            public int Attackbonus { get; set; }
+            public bool Attackbonus { get; set; }
 
-            public int Attack() {
+            public int Attack(Dice currentDice) {
                 //used to calculate damage amount
-                Random damage = new Random();
+                currentDice.Sides = DamageMax;
         
-                return Attackbonus*(damage.Next(DamageMax)+1);
+                return currentDice.Roll();
             }
 
             public void Defend(int attack) {
