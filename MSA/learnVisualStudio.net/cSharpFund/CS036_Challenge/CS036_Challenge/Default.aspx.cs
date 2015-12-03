@@ -20,7 +20,7 @@ namespace CS036_Challenge
             Charact hero = new Charact();
             Charact monster = new Charact();
             hero.Name = "Galleon"; hero.Health = 99; hero.DamageMax = 10; hero.Attackbonus = 3;
-            monster.Name = "Garados"; monster.Health = 80; hero.DamageMax = 10; hero.Attackbonus = 3;
+            monster.Name = "Garados"; monster.Health = 80; monster.DamageMax = 10; monster.Attackbonus = 3;
 
             //Calculate Damage
             hero.Defend(monster.Attack());
@@ -31,6 +31,15 @@ namespace CS036_Challenge
             monsterLabel.Text = String.Format("{0} health remaining is {1}", monster.Name, monster.Health);
         }
 
+        public class Dice
+        {
+            public int Sides { get; set; }
+            Random random = new Random();
+
+            public int Roll() {
+                return random.Next(this.Sides);
+            }
+        }
         public class Charact {
             public string Name { get; set; }
             public int Health { get; set; }
