@@ -11,7 +11,26 @@ namespace CS036_Challenge
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            Charact hero = new Charact();
+            Charact monster = new Charact();
 
+
+        }
+
+        public class Charact {
+            public string Name { get; set; }
+            public int Health { get; set; }
+            public int DamageMax { get; set; }
+            public int Attackbonus { get; set; }
+
+            public int Attack() {
+                Random damage = new Random();
+                return Attackbonus*(damage.Next(DamageMax)+1);
+            }
+
+            public void Defend(int attack) {
+                Health -= attack;
+            }
         }
     }
 }
