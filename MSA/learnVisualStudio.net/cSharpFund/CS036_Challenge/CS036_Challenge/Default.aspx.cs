@@ -20,7 +20,7 @@ namespace CS036_Challenge
             Charact hero = new Charact();
             Charact monster = new Charact();
             hero.Name = "Galleon"; hero.Health = 99; hero.DamageMax = 10; hero.Attackbonus = true;
-            monster.Name = "Garados"; monster.Health = 80; monster.DamageMax = 10; monster.Attackbonus = fal;
+            monster.Name = "Garados"; monster.Health = 80; monster.DamageMax = 10; monster.Attackbonus = false;
 
 
             //If a character has attack bonus they get an extra attack in begining
@@ -34,10 +34,18 @@ namespace CS036_Challenge
                 hero.Defend(monster.Attack(currentDice));
                 
             }
-            //Calculate Damage
-            hero.Defend(monster.Attack(currentDice));
-            monster.Defend(hero.Attack(currentDice));
 
+
+            //Keep attacking until one of the characters dies
+            do
+            {
+                //Calculate Damage
+                hero.Defend(monster.Attack(currentDice));
+                monster.Defend(hero.Attack(currentDice));
+
+            } while (monster.Health > 0 && hero.Health > 0);
+
+            
             //Display results
             heroLabel.Text = String.Format("{0} health remaining is {1}", hero.Name, hero.Health);
             monsterLabel.Text = String.Format("{0} health remaining is {1}", monster.Name, monster.Health);
