@@ -10,6 +10,10 @@
     <form id="form1" runat="server">
     <div>
     
+        <asp:Label ID="vsLabel" runat="server" Text="Label"></asp:Label>
+        <br />
+        <asp:Label ID="resultsLabel" runat="server" Text="Label"></asp:Label>
+    
     </div>
     </form>
 </body>
