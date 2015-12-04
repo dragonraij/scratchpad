@@ -19,6 +19,7 @@ namespace CS_045_SimpleDartsGame
         {
             this.player1 = Player1;
             this.player2 = Player2;
+            this.winPoints = 300; // winning condition is 300+ points
         }
 
         public void Battle()
