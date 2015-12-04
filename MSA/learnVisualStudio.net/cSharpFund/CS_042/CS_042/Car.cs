@@ -19,6 +19,16 @@ namespace CS_042
             //this.Color = "Undefined";
         }
 
+        //overloaded constructor
+
+        public Car(string make, string model, string color, int year)
+        {
+            this.Make = make;
+            this.Model = model;
+            this.Color = color;
+            this.Year = year;
+        }
+
         public string FormatDetailsForDisplay() {
             return String.Format("Make: {0} - Model: {1} - Year: {2} - Color: {3}", Make, Model, Year, Color);
         }

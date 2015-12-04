@@ -11,8 +11,11 @@ namespace CS_042
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Car myCar = new Car();
+            //Car myCar = new Car();
+            Car myCar = new Car("Ford", "Valiant", "Gold", 1990);
             resultLabel.Text = myCar.FormatDetailsForDisplay();
         }
+
+        
     }
 }
