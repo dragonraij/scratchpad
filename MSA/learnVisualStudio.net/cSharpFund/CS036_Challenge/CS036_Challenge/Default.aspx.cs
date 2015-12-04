@@ -41,8 +41,9 @@ namespace CS036_Challenge
             {
                 //Calculate Damage
                 hero.Defend(monster.Attack(currentDice));
+                resultLabel.Text += String.Format("<p>Monster Attacks, Hero health = {0}</p>", hero.Health);
                 monster.Defend(hero.Attack(currentDice));
-
+                resultLabel.Text += String.Format("Hero Attacks, Monster health = {0}", monster.Health);
             } while (monster.Health > 0 && hero.Health > 0);
 
             
@@ -55,7 +56,7 @@ namespace CS036_Challenge
         {
             public int Sides { get; set; }
             Random random = new Random();
-
+            
             public int Roll() {
                 return random.Next(this.Sides);
             }
@@ -75,6 +76,7 @@ namespace CS036_Challenge
 
             public void Defend(int attack) {
                 Health -= attack;
+                
             }
         }
     }
