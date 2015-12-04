@@ -15,6 +15,19 @@ namespace CS_045_SimpleDartsGame
             Player player2 = new Player("Bob");
 
             vsLabel.Text = String.Format("{0} vs {1}", player1.Name, player2.Name);
+
+            //pair player
+            DartsBattle AlfredVsBob = new DartsBattle(player1, player2);
+
+            //play match
+            AlfredVsBob.Battle();
+
+            //Display Score
+            scoreLabel.Text = AlfredVsBob.DisplayScore();
+
+            //Display winner name
+            resultsLabel.Text = "The winner is "+ AlfredVsBob.WinnerName();
+
         }
     }
 }

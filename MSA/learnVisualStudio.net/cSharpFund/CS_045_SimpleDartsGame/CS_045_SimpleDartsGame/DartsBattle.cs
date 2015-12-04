@@ -72,6 +72,15 @@ namespace CS_045_SimpleDartsGame
         public string DisplayScore(){
             return String.Format("Player 1: {0} {1}pts - Player 2: {2} {3}pts", player1.Name, player1.Score, player2.Name, player2.Score);
         }
+
+        public string WinnerName()
+        {
+            if (player1.Score > player2.Score)
+                return player1.Name;
+            else
+                return player2.Name;
+            
+        }
     }
 
 
