@@ -16,10 +16,38 @@ namespace CS051_StudentCourses
 
         protected void Button2_Click(object sender, EventArgs e)
         {
-            //Add a dictionary of courses, each course should have at least two students in them
+            //Add a dictionary of students, each student should have at least two courses in them
             //use object and collection initializers, then list through course details and print students
             //use student id as the key
+            Dictionary<string, Student> studentDir = new Dictionary<string, Student>();
 
+            studentDir.Add("S11", new Student { Name = "Mike", StudentID = 11, Courses = new List<Course>() { 
+            new Course{ CourseID=1, Name="Major in Music"},
+            new Course{ CourseID=3, Name="Financial Study"}
+            
+            } 
+            });
+
+            studentDir.Add("S14", new Student
+            {
+                Name = "Maurice",
+                StudentID = 14,
+                Courses = new List<Course>()
+                {
+                    new Course{ CourseID=12, Name="Pencil Art"},
+                    new Course{ CourseID=14, Name="Art History"}
+                }
+            });
+
+            resultLabel.Text = "";
+            foreach (var student in studentDir)
+            {
+                resultLabel.Text += "<p><b>" + student.Value.DisplayStudent() + "</p></b>";
+                foreach (var course in student.Value.Courses)
+                {
+                    resultLabel.Text += "<p>"+course.DisplayCourse()+"</p>";
+                }
+            }
 
         }
 
