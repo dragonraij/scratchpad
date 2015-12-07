@@ -9,7 +9,7 @@ namespace CS051_StudentCourses
     {
         public int StudentID { get; set; }
         public string Name { get; set; }
-        public List<Course> Courses { get; set; }
+       // public List<Course> Courses { get; set; }
 
         public Student()
         {
@@ -18,7 +18,7 @@ namespace CS051_StudentCourses
         }
 
         public string DisplayStudent() {
-            return StudentID + " " + Name;
+            return "Student ID ="+StudentID + " Name=" + Name;
         }
 
     }
