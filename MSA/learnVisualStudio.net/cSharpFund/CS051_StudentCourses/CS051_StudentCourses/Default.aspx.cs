@@ -94,6 +94,10 @@ namespace CS051_StudentCourses
         {
             //for each student add a grade for each class they are taking
             // cycle through and print the grades
+            List<Enrollment> Enrollments = new List<Enrollment>();
+            Enrollments.Add(new Enrollment { Grade = 'A', Course = new Course { Name = "Intro to Contoso", CourseID = 100 }, Student = new Student { Name="Bob Jones", StudentID=111 } });
+            Enrollments.Add(new Enrollment { Grade = 'B', Student = new Student { Name = "Steven Hawk", StudentID = 123 }, Course = new Course { CourseID=211, Name="Advanced Contoso" } });
+
         }
     }
 }
