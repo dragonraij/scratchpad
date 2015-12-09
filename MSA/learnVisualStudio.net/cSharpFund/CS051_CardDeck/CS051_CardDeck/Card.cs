@@ -20,6 +20,11 @@ namespace CS051_CardDeck
             suit = Suit.Joker;
         }
 
+        public Card(Rank rank, Suit suit) {
+            this.rank = rank;
+            this.suit = suit;
+        }
+
         string DisplayCard() {
             return String.Format("{0} of {1}", rank, suit);
         }
