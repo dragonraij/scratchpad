@@ -25,7 +25,7 @@ namespace CS051_CardDeck
             this.suit = suit;
         }
 
-        string DisplayCard() {
+        public string DisplayCard() {
             return String.Format("{0} of {1}", rank, suit);
         }
     }
