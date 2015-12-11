@@ -11,6 +11,7 @@ namespace CS051_CardDeck
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            //used for testing purposes of the deck and class mmethod
             Deck currentDeck = new Deck();
            // Label1.Text = currentDeck.DisplayDeck();
             for (int i = 0; i < 52; i++)
