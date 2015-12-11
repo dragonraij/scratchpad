@@ -28,7 +28,9 @@ namespace CS051_CardDeck
 
         public Card DealCard() { 
              int cardPosition=random.Next(cards.Count);
-             return cards.ElementAt(cardPosition);
+             Card toRemove = cards.ElementAt(cardPosition);
+             cards.RemoveAt(cardPosition);
+             return toRemove;
         }
 
         public Deck(){
