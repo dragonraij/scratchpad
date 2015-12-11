@@ -16,9 +16,14 @@ namespace CS051_WarGame
             {
                 while (player1.Hand.Count>0 && player2.Hand.Count>0)
                 {
-                    
+                    playRound();
                 }
             }
+        }
+
+        private void playRound()
+        {
+            throw new NotImplementedException();
         }
 
         public string Winner() {
