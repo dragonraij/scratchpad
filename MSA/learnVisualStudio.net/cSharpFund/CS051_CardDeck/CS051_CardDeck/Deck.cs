@@ -10,7 +10,7 @@ namespace CS051_CardDeck
     {
 
         Random random = new Random();
-        private List<Card> cards { get; set; }
+        private List<Card> cards = new List<Card>();
 
 
         public string DisplayDeck()
@@ -26,13 +26,18 @@ namespace CS051_CardDeck
             return display;
         }
 
+        public Card DealCard() { 
+             int cardPosition=random.Next(cards.Count);
+             return cards.ElementAt(cardPosition);
+        }
+
         public Deck(){
             for (var j = 0; j < 13; j++)
             {
                 for (var i = 0; i < 4; i++)
                 {
-                    cards.Add(new Card() { rank = Rank.Joker, suit = Suit.Joker });
-                    //cards.Add(new Card() { rank = (Rank)Enum.Parse(typeof(Rank), j.ToString()) });
+                    //cards.Add(new Card() { rank = Rank.Joker, suit = Suit.Joker });
+                    cards.Add(new Card() { rank = (Rank)Enum.Parse(typeof(Rank), j.ToString()), suit = (Suit)Enum.Parse(typeof(Suit), i.ToString()) });
                 }
             }
             

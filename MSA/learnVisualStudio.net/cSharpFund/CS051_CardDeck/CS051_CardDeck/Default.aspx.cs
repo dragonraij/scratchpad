@@ -12,7 +12,11 @@ namespace CS051_CardDeck
         protected void Page_Load(object sender, EventArgs e)
         {
             Deck currentDeck = new Deck();
-            Label1.Text = currentDeck.DisplayDeck();
+           // Label1.Text = currentDeck.DisplayDeck();
+            for (int i = 0; i < 52; i++)
+            {
+                Label1.Text += "<p>"+currentDeck.DealCard().DisplayCard()+"</p>";
+            }
         }
     }
 }
