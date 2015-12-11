@@ -8,8 +8,6 @@ namespace CS051_CardDeck
 {
     public class Deck
     {
-        public enum Rank { Two, Three, Four, Five, Six, Seven, Eight, Nine, Ten, Jack, Queen, King, Ace, Joker };
-        public enum Suit { Clubs, Spades, Diamonds, Hearts, Joker };
 
         Random random = new Random();
         private List<Card> cards { get; set; }
@@ -33,7 +31,8 @@ namespace CS051_CardDeck
             {
                 for (var i = 0; i < 4; i++)
                 {
-                    cards.Add(new Card((Rank)j, (Suit)i));
+                    cards.Add(new Card() { rank = Rank.Joker, suit = Suit.Joker });
+                    //cards.Add(new Card() { rank = (Rank)Enum.Parse(typeof(Rank), j.ToString()) });
                 }
             }
             
