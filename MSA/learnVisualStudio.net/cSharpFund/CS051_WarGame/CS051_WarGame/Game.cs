@@ -10,7 +10,20 @@ namespace CS051_WarGame
         private Player player1 { get; set; }
         private Player player2 { get; set; }
 
-
+        public string Winner() {
+            if (player1.Hand.Count>player2.Hand.Count)
+            {
+                return player1.Name;
+            }
+            else if (player2.Hand.Count>player1.Hand.Count)
+            {
+                return player2.Name;
+            }
+            else
+            {
+                return "Its a draw !!";
+            }
+        }
         public Game() {
             player1 = new Player(){ Name="Player 1"};
             player2 = new Player() { Name = "Player 2" };
