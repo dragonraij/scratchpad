@@ -10,6 +10,17 @@ namespace CS051_WarGame
         private Player player1 { get; set; }
         private Player player2 { get; set; }
 
+        public void Play20Rounds()
+        {
+            for (int rounds = 0; rounds < 20; rounds++)
+            {
+                while (player1.Hand.Count>0 && player2.Hand.Count>0)
+                {
+                    
+                }
+            }
+        }
+
         public string Winner() {
             if (player1.Hand.Count>player2.Hand.Count)
             {
