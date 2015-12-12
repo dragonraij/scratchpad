@@ -25,11 +25,20 @@ namespace CS051_WarGame
             player2Card = player2.PlayFirstCard();
             bounty.Add(player1Card);
             bounty.Add(player2Card);
-            int posi = (int)player1Card.rank;
-            if (true)
+           
+            if (player1Card.rank>player2Card.rank)
             {
-                
+                 winnerGetsBounty(player1);
             }
+            else if (player2Card.rank>player1Card.rank)
+            {
+                winnerGetsBounty(player2);
+            }
+        }
+
+        private void winnerGetsBounty(Player winner)
+        {
+                
         }
     }
 
