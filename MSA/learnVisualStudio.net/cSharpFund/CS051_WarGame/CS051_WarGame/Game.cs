@@ -13,15 +13,27 @@ namespace CS051_WarGame
         Deck cardDeck = new Deck();
 
         public string DealCards() {
-            string dealInfo = "";
+            string dealInfo = "<h3>Dealing Cards ... </h3>";
+            Card dealtCard = new Card();
 
-            Card card1 = cardDeck.DealCard();
-            player1.Hand.Add(card1);
-            dealInfo += String.Format("{0} was dealt {1}", player1.Name, card1.DisplayCard());
+            //repeat 26 times dealing a caard to both players
+            for (int dealRound = 0; dealRound < 26; dealRound++)
+            {
+                DealCardAndGiveDetails(player1, ref dealInfo, ref dealtCard);
+                DealCardAndGiveDetails(player2, ref dealInfo, ref dealtCard);
+
+            }
 
             return dealInfo;
 
-            //Card card2 = ;
+        }
+
+        private void DealCardAndGiveDetails(Player currentPlayer, ref string dealInfo, ref Card dealtCard)
+        {
+            dealtCard = cardDeck.DealCard();
+            currentPlayer.Hand.Add(dealtCard);
+            dealInfo += String.Format("<p>{0} was dealt {1}</p>", currentPlayer.Name, dealtCard.DisplayCard());
+
         }
 
         public void Play20Rounds()
