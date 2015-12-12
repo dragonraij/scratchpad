@@ -64,6 +64,8 @@ namespace CS051_WarGame
             bounty.Add(player2.PlayFirstCard());
             player2Card = player2.PlayFirstCard();
             bounty.Add(player2Card);
+
+            whoWon();
         }
     }
 
