@@ -26,6 +26,11 @@ namespace CS051_WarGame
             bounty.Add(player1Card);
             bounty.Add(player2Card);
 
+            whoWon();
+        }
+
+        private void whoWon()
+        {
             if (player1Card.rank > player2Card.rank)
             {
                 winnerGetsBounty(player1);
@@ -50,7 +55,15 @@ namespace CS051_WarGame
 
         private void thisIsWar()
         {
-           
+            bounty.Add(player1.PlayFirstCard());
+            bounty.Add(player1.PlayFirstCard());
+            player1Card = player1.PlayFirstCard();
+            bounty.Add(player1Card);
+
+            bounty.Add(player2.PlayFirstCard());
+            bounty.Add(player2.PlayFirstCard());
+            player2Card = player2.PlayFirstCard();
+            bounty.Add(player2Card);
         }
     }
 
