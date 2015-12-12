@@ -34,6 +34,7 @@ namespace CS051_CardDeck
         }
 
         public Deck(){
+            //initialize deck by putting 52 cards to complete the deck
             for (var j = 0; j < 13; j++)
             {
                 for (var i = 0; i < 4; i++)

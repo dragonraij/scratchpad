@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CS051_CardDeck;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,6 +10,8 @@ namespace CS051_WarGame
     {
         public Player player1 { get; set; }
         public Player player2 { get; set; }
+        Deck cardDeck = new Deck();
+
 
         public void Play20Rounds()
         {
@@ -23,7 +26,7 @@ namespace CS051_WarGame
         }
 
         
-
+        //the player with most cards is the winner
         public string Winner() {
             if (player1.Hand.Count>player2.Hand.Count)
             {
@@ -38,6 +41,8 @@ namespace CS051_WarGame
                 return "Its a draw !!";
             }
         }
+
+        //object initializers
         public Game() {
             player1 = new Player(){ Name="Player 1"};
             player2 = new Player() { Name = "Player 2" };
