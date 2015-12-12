@@ -7,8 +7,8 @@ namespace CS051_WarGame
 {
     public class Game
     {
-        private Player player1 { get; set; }
-        private Player player2 { get; set; }
+        public Player player1 { get; set; }
+        public Player player2 { get; set; }
 
         public void Play20Rounds()
         {

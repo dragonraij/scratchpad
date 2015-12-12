@@ -11,6 +11,9 @@ namespace CS051_WarGame
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            //Initialise new game object
+            Game warGame = new Game("Steve", "Bob");
+            vsLabel.Text = String.Format("<h3><b>{0} vs {1}</h3></b>", warGame.player1.Name, warGame.player2.Name);
 
         }
     }
