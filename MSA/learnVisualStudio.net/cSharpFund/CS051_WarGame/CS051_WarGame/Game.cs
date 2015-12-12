@@ -12,6 +12,17 @@ namespace CS051_WarGame
         public Player player2 { get; set; }
         Deck cardDeck = new Deck();
 
+        public string DealCards() {
+            string dealInfo = "";
+
+            Card card1 = cardDeck.DealCard();
+            player1.Hand.Add(card1);
+            dealInfo += String.Format("{0} was dealt {1}", player1.Name, card1.DisplayCard());
+
+            return dealInfo;
+
+            //Card card2 = ;
+        }
 
         public void Play20Rounds()
         {
