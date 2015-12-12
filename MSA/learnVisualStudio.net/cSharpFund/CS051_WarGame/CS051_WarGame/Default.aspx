@@ -10,7 +10,13 @@
     <form id="form1" runat="server">
     <div>
     
-        <asp:Label ID="resultLabel" runat="server" Text="Label"></asp:Label>
+        <asp:Label ID="titleLabel" runat="server" Font-Names="Blackadder ITC" Font-Size="XX-Large" ForeColor="#CC0000" Text="War Games"></asp:Label>
+        <br />
+        <asp:Label ID="vsLabel" runat="server" Text="vs"></asp:Label>
+        <br />
+        <asp:Label ID="battleLabel" runat="server"></asp:Label>
+        <br />
+        <asp:Label ID="resultLabel" runat="server"></asp:Label>
     
     </div>
     </form>

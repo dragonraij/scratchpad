@@ -16,7 +16,8 @@ namespace CS051_WarGame
             {
                 while (player1.Hand.Count>0 && player2.Hand.Count>0)
                 {
-                    
+                    Round newRound = new Round(player1, player2);
+                    newRound.PlayRound();
                 }
             }
         }
