@@ -25,20 +25,26 @@ namespace CS051_WarGame
             player2Card = player2.PlayFirstCard();
             bounty.Add(player1Card);
             bounty.Add(player2Card);
-           
-            if (player1Card.rank>player2Card.rank)
+
+            if (player1Card.rank > player2Card.rank)
             {
-                 winnerGetsBounty(player1);
+                winnerGetsBounty(player1);
             }
-            else if (player2Card.rank>player1Card.rank)
+            else if (player2Card.rank > player1Card.rank)
             {
                 winnerGetsBounty(player2);
             }
+            else
+                thisIsWar();
         }
 
         private void winnerGetsBounty(Player winner)
         {
-                
+            while (bounty.Count>0)
+            {
+                winner.Hand.Add(bounty.ElementAt(0));
+                bounty.RemoveAt(0);
+            }
         }
     }
 
