@@ -40,6 +40,15 @@ namespace CS051_WarGame {
         protected global::System.Web.UI.WebControls.Label vsLabel;
         
         /// <summary>
+        /// dealLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label dealLabel;
+        
+        /// <summary>
         /// battleLabel control.
         /// </summary>
         /// <remarks>

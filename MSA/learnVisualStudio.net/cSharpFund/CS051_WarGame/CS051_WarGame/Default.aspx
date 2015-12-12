@@ -14,6 +14,8 @@
         <br />
         <asp:Label ID="vsLabel" runat="server" Text="vs"></asp:Label>
         <br />
+        <asp:Label ID="dealLabel" runat="server"></asp:Label>
+        <br />
         <asp:Label ID="battleLabel" runat="server"></asp:Label>
         <br />
         <asp:Label ID="resultLabel" runat="server"></asp:Label>
