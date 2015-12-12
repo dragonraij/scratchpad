@@ -45,6 +45,8 @@ namespace CS051_WarGame
                 newRound.PlayRound();
                 roundInfo += String.Format("<p>{0} played {1}</p>", player1.Name, newRound.player1Card.DisplayCard());
                 roundInfo += String.Format("<p>{0} played {1}</p>", player2.Name, newRound.player2Card.DisplayCard());
+                roundInfo += String.Format("<p><b>Bounty : </b>:{0}</p>", newRound.DisplayBounty());
+                
                 return roundInfo;
             
         }

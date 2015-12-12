@@ -13,12 +13,14 @@ namespace CS051_WarGame
         public Card  player1Card { get; set; }
         public Card player2Card { get; set; }
         private List<Card> bounty = new List<Card>();
-
+        public string BountyAsString { get; set; };
+        public Player RoundWinner { get; set; }
 
         public Round(Player player1, Player player2) {
             this.player1 = player1;
             this.player2 = player2;
         }
+
 
         public void PlayRound() {
             player1Card = player1.PlayFirstCard();
@@ -33,6 +35,7 @@ namespace CS051_WarGame
         {
             if (player1Card.rank > player2Card.rank)
             {
+                
                 winnerGetsBounty(player1);
             }
             else if (player2Card.rank > player1Card.rank)
@@ -43,9 +46,29 @@ namespace CS051_WarGame
                 thisIsWar();
         }
 
+        public string DisplayBounty()
+        {
+            //create string and add all the card names in bounty stack
+            string bountyCards = "";
+            bountyCards += bounty.ElementAt(1).DisplayCard();
+            for (int i = 1; i < bounty.Count; i++)
+            {
+                bountyCards += ", " +bounty.ElementAt(i).DisplayCard();
+            }
+
+            return bountyCards;
+        }
+
 
         private void winnerGetsBounty(Player winner)
         {
+            //before removing bounty cards store their details as string
+            BountyAsString = DisplayBounty();
+
+            //update details of round winner
+            RoundWinner=winner;
+
+            //while cards remain in bounty remove and give to winner
             while (bounty.Count>0)
             {
                 winner.Hand.Add(bounty.ElementAt(0));
