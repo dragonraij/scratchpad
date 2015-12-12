@@ -38,6 +38,7 @@ namespace CS051_WarGame
                 thisIsWar();
         }
 
+
         private void winnerGetsBounty(Player winner)
         {
             while (bounty.Count>0)
@@ -45,6 +46,11 @@ namespace CS051_WarGame
                 winner.Hand.Add(bounty.ElementAt(0));
                 bounty.RemoveAt(0);
             }
+        }
+
+        private void thisIsWar()
+        {
+           
         }
     }
 
