@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CS051_CardDeck;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -24,6 +25,11 @@ namespace CS051_WarGame
             player2Card = player2.PlayFirstCard();
             bounty.Add(player1Card);
             bounty.Add(player2Card);
+            int posi = (int)player1Card.rank;
+            if (true)
+            {
+                
+            }
         }
     }
 
