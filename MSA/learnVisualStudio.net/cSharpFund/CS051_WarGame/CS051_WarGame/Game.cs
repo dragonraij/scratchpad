@@ -41,11 +41,12 @@ namespace CS051_WarGame
         public string PlayRounds()
         {
                 string roundInfo = "";
-                Round newRound = new Round(player1, player2);
-                newRound.PlayRound();
-                roundInfo += String.Format("<p>{0} played {1}</p>", player1.Name, newRound.player1Card.DisplayCard());
-                roundInfo += String.Format("<p>{0} played {1}</p>", player2.Name, newRound.player2Card.DisplayCard());
-                roundInfo += String.Format("<p><b>Bounty : </b>:{0}</p>", newRound.DisplayBounty());
+                Round thisRound = new Round(player1, player2);
+                thisRound.PlayRound();
+                roundInfo += String.Format("<p>{0} played {1}</p>", player1.Name, thisRound.player1Card.DisplayCard());
+                roundInfo += String.Format("<p>{0} played {1}</p>", player2.Name, thisRound.player2Card.DisplayCard());
+                roundInfo += String.Format("<p><b>Bounty : </b>{0}</p>", thisRound.BountyAsString);
+                roundInfo += String.Format("Round Winner is {0}", thisRound.RoundWinner.Name);
                 
                 return roundInfo;
             

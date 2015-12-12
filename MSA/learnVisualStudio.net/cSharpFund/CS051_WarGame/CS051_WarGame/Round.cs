@@ -13,8 +13,8 @@ namespace CS051_WarGame
         public Card  player1Card { get; set; }
         public Card player2Card { get; set; }
         private List<Card> bounty = new List<Card>();
-        public string BountyAsString { get; set; };
-        public Player RoundWinner { get; set; }
+        public string BountyAsString = "";
+        public Player RoundWinner = new Player();
 
         public Round(Player player1, Player player2) {
             this.player1 = player1;
@@ -50,7 +50,7 @@ namespace CS051_WarGame
         {
             //create string and add all the card names in bounty stack
             string bountyCards = "";
-            bountyCards += bounty.ElementAt(1).DisplayCard();
+            bountyCards += bounty.ElementAt(0).DisplayCard();
             for (int i = 1; i < bounty.Count; i++)
             {
                 bountyCards += ", " +bounty.ElementAt(i).DisplayCard();
