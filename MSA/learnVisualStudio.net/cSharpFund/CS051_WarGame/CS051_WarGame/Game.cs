@@ -36,16 +36,16 @@ namespace CS051_WarGame
 
         }
 
-        public void Play20Rounds()
+        
+        //play single round of game
+        public void PlayRounds()
         {
-            for (int rounds = 0; rounds < 20; rounds++)
-            {
                 while (player1.Hand.Count>0 && player2.Hand.Count>0)
                 {
                     Round newRound = new Round(player1, player2);
                     newRound.PlayRound();
                 }
-            }
+            
         }
 
         
