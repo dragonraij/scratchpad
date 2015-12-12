@@ -14,6 +14,17 @@ namespace CS051_WarGame
         private List<Card> bounty = new List<Card>();
 
 
+        public Round(Player player1, Player player2) {
+            this.player1 = player1;
+            this.player2 = player2;
+        }
 
+        public void PlayRound() {
+            player1Card = player1.PlayFirstCard();
+            player2Card = player2.PlayFirstCard();
+            bounty.Add(player1Card);
+            bounty.Add(player2Card);
+        }
     }
+
 }
