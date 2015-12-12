@@ -13,7 +13,7 @@ namespace CS051_WarGame
         public Card  player1Card { get; set; }
         public Card player2Card { get; set; }
         private List<Card> bounty = new List<Card>();
-        public string BountyAsString = "";
+        private string roundDetails = ""; // used to pass out details of what happened in round
         public Player RoundWinner = new Player();
 
         public Round(Player player1, Player player2) {
@@ -22,24 +22,30 @@ namespace CS051_WarGame
         }
 
 
-        public void PlayRound() {
+        public string PlayRound() {
             player1Card = player1.PlayFirstCard();
             player2Card = player2.PlayFirstCard();
             bounty.Add(player1Card);
             bounty.Add(player2Card);
 
+            roundDetails += String.Format("<p>{0} plays {1} :", player1.Name, player1Card.DisplayCard());
+            roundDetails += String.Format("{0} plays {1}</p>", player2.Name, player2Card.DisplayCard());
+
             whoWon();
+
+            return roundDetails;
         }
 
         private void whoWon()
         {
             if (player1Card.rank > player2Card.rank)
             {
-                
+                roundDetails += String.Format("<b><p>{0} wins round</p></b>", player1.Name);    
                 winnerGetsBounty(player1);
             }
             else if (player2Card.rank > player1Card.rank)
             {
+                roundDetails += String.Format("<b><p>{0} wins round</p></b>", player2.Name);    
                 winnerGetsBounty(player2);
             }
             else
@@ -63,7 +69,7 @@ namespace CS051_WarGame
         private void winnerGetsBounty(Player winner)
         {
             //before removing bounty cards store their details as string
-            BountyAsString = DisplayBounty();
+            roundDetails += DisplayBounty();
 
             //update details of round winner
             RoundWinner=winner;
@@ -78,15 +84,22 @@ namespace CS051_WarGame
 
         private void thisIsWar()
         {
+            roundDetails+=String.Format("<p>************  WAR ************</p>");
             bounty.Add(player1.PlayFirstCard());
             bounty.Add(player1.PlayFirstCard());
             player1Card = player1.PlayFirstCard();
             bounty.Add(player1Card);
 
+            //update round information
+            roundDetails += String.Format("<p>{0}  puts 3 cards on bounty and plays {1} </p>", player1.Name, player1Card.DisplayCard());
+
             bounty.Add(player2.PlayFirstCard());
             bounty.Add(player2.PlayFirstCard());
             player2Card = player2.PlayFirstCard();
             bounty.Add(player2Card);
+
+            //update round information
+            roundDetails += String.Format("<p>{0} puts 3 cards on bounty and plays {1} </p>", player2.Name, player2Card.DisplayCard());
 
             whoWon();
         }
