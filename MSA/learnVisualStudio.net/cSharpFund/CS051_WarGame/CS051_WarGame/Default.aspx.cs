@@ -23,6 +23,12 @@ namespace CS051_WarGame
                 battleLabel.Text+= warGame.PlayRounds();
                 
             }
+
+            //See who has more cards and declare him as winner
+            resultLabel.Text = String.Format("<h3>Final Result:</h3>");
+            resultLabel.Text += string.Format("<p>{0} has {1} cards</p>", warGame.player1.Name, warGame.player1.Hand.Count);
+            resultLabel.Text += string.Format("<p>{0} has {1} cards</p>", warGame.player2.Name, warGame.player2.Hand.Count);
+            winnerLabel.Text = string.Format("<h2>The winner is {0}</h2>", warGame.Winner());
         }
     }
 }

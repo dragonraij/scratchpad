@@ -55,7 +55,7 @@ namespace CS051_WarGame
         public string DisplayBounty()
         {
             //create string and add all the card names in bounty stack
-            string bountyCards = "";
+            string bountyCards = "Bounty : ";
             bountyCards += bounty.ElementAt(0).DisplayCard();
             for (int i = 1; i < bounty.Count; i++)
             {

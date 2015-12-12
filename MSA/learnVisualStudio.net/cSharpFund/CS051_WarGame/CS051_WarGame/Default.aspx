@@ -19,6 +19,8 @@
         <asp:Label ID="battleLabel" runat="server"></asp:Label>
         <br />
         <asp:Label ID="resultLabel" runat="server"></asp:Label>
+        <br />
+        <asp:Label ID="winnerLabel" runat="server" ForeColor="#0066FF"></asp:Label>
     
     </div>
     </form>
