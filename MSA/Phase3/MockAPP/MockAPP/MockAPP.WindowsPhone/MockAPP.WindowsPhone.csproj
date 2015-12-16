@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>f648a27e-13d0-4b64-ab7b-6ccd729b7514</ProjectGuid>
+    <ProjectGuid>56292aae-a16a-412d-918e-23c3cc06624b</ProjectGuid>
     <OutputType>AppContainerExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MockApiApp</RootNamespace>
-    <AssemblyName>MockApiApp.WindowsPhone</AssemblyName>
+    <RootNamespace>MockAPP</RootNamespace>
+    <AssemblyName>MockAPP.WindowsPhone</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformVersion>8.1</TargetPlatformVersion>
     <MinimumVisualStudioVersion>12</MinimumVisualStudioVersion>
@@ -113,7 +113,7 @@
   <PropertyGroup Condition=" '$(TargetPlatformIdentifier)' == '' ">
     <TargetPlatformIdentifier>WindowsPhoneApp</TargetPlatformIdentifier>
   </PropertyGroup>
-  <Import Project="..\MockApiApp.Shared\MockApiApp.Shared.projitems" Label="Shared" />
+  <Import Project="..\MockAPP.Shared\MockAPP.Shared.projitems" Label="Shared" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

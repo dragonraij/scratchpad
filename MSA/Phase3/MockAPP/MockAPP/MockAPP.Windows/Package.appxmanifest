@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest">
 
-  <Identity Name="b0d3d024-febf-40d0-9222-0f86fbd0d7c9"
+  <Identity Name="940c40ee-fbd4-4202-b0a6-c7bbf1c5be85"
             Publisher="CN=RPrasad"
             Version="1.0.0.0" />
 
   <Properties>
-    <DisplayName>MockApiApp.Windows</DisplayName>
+    <DisplayName>MockAPP.Windows</DisplayName>
     <PublisherDisplayName>RPrasad</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
@@ -23,12 +23,12 @@
   <Applications>
     <Application Id="App"
         Executable="$targetnametoken$.exe"
-        EntryPoint="MockApiApp.Windows.App">
+        EntryPoint="MockAPP.Windows.App">
         <m2:VisualElements
-            DisplayName="MockApiApp.Windows"
+            DisplayName="MockAPP.Windows"
             Square150x150Logo="Assets\Logo.png"
             Square30x30Logo="Assets\SmallLogo.png"
-            Description="MockApiApp.Windows"
+            Description="MockAPP.Windows"
             ForegroundText="light"
             BackgroundColor="#464646">
             <m2:SplashScreen Image="Assets\SplashScreen.png" />

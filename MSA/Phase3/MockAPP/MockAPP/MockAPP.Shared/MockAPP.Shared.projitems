@@ -3,10 +3,10 @@
   <PropertyGroup>
     <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
     <HasSharedItems>true</HasSharedItems>
-    <SharedGUID>5edb2baa-ffa5-452e-a288-626051723f51</SharedGUID>
+    <SharedGUID>bb1a432f-decb-47c4-9e13-355716ea2bd8</SharedGUID>
   </PropertyGroup>
   <PropertyGroup Label="Configuration">
-    <Import_RootNamespace>MockApiApp</Import_RootNamespace>
+    <Import_RootNamespace>MockAPP</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
     <ApplicationDefinition Include="$(MSBuildThisFileDirectory)App.xaml">
