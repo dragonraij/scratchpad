@@ -41,12 +41,14 @@ namespace MockAPP
                 if (response.IsSuccessStatusCode) {
                     // Customer customer = await response.Content.ReadAsAsync<Customer>();
                     // resultBlock.Text = customer.ToString();
-
+                    string output = "";
                     var results = await response.Content.ReadAsAsync<List<Customer>>();
-                 //   List<Customer> customerList =
-                   //      (List<Customer>)Newtonsoft.Json.JsonConvert.DeserializeObject( results, typeof(List<Customer>));
+                    foreach (var customer in results)
+                    {
+                        output += "\nCustomer : "+customer.CustomerName+" Joined : "+customer.Joined;
+                    }
 
-                    
+                    resultBlock.Text = output;
                 }
 
             }

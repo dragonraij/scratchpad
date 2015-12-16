@@ -9,8 +9,10 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="1254,686,0,0" VerticalAlignment="Top" Click="button_Click"/>
-        <TextBlock x:Name="resultBlock" HorizontalAlignment="Left" Margin="448,372,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="136" Width="372" FontSize="21.333"/>
+        <TextBlock x:Name="resultBlock" HorizontalAlignment="Left" Margin="351,155,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="136" Width="372" FontSize="21.333"/>
         <Button x:Name="button1" Content="Button" HorizontalAlignment="Left" Margin="133,495,0,0" VerticalAlignment="Top" Click="button1_Click"/>
+        <StackPanel HorizontalAlignment="Left" Height="100" Margin="876,155,0,0" VerticalAlignment="Top" Width="100"/>
+        <GridView x:Name="gridView" HorizontalAlignment="Left" Margin="766,338,0,0" VerticalAlignment="Top" Width="100"/>
 
     </Grid>
 </Page>
