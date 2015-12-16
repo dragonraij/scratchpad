@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MockAPP.Model;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -30,10 +32,29 @@ namespace MockAPP
 
         private async void button_Click(object sender, RoutedEventArgs e)
         {
-            HttpResponseMessage Response = await client.PostAsync("http://motivtechindia.com/quiz/ws/empquizs", content);
-            int statusCode = (int)Response.StatusCode;
-            string results = await Response.Content.ReadAsStringAsync();
-            MessageBox.Show(results);`enter code here`
+            using (var client = new HttpClient()) {
+                client.BaseAddress = new Uri("http://mockapi123.azurewebsites.net/");
+                client.DefaultRequestHeaders.Accept.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
+
+                HttpResponseMessage response = await client.GetAsync("custom/mycustomers/");
+                if (response.IsSuccessStatusCode) {
+                    // Customer customer = await response.Content.ReadAsAsync<Customer>();
+                    // resultBlock.Text = customer.ToString();
+
+                    var results = await response.Content.ReadAsAsync<List<Customer>>();
+                 //   List<Customer> customerList =
+                   //      (List<Customer>)Newtonsoft.Json.JsonConvert.DeserializeObject( results, typeof(List<Customer>));
+
+                    
+                }
+
+            }
+        }
+
+        private void button1_Click(object sender, RoutedEventArgs e)
+        {
+            resultBlock.Text = "Hello Linda";
         }
     }
 }
