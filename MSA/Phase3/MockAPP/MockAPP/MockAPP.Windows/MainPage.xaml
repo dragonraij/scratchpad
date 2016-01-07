@@ -1,18 +1,28 @@
 ﻿<Page
-    x:Class="MockAPP.MainPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:MockAPP"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:Model="using:MockAPP.Model"
+    x:Class="MockAPP.MainPage"
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="1254,686,0,0" VerticalAlignment="Top" Click="button_Click"/>
-        <TextBlock x:Name="resultBlock" HorizontalAlignment="Left" Margin="351,155,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="136" Width="372" FontSize="21.333"/>
+        <TextBlock x:Name="resultBlock" HorizontalAlignment="Left" Margin="59,41,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="136" Width="372" FontSize="21.333"/>
         <Button x:Name="button1" Content="Button" HorizontalAlignment="Left" Margin="133,495,0,0" VerticalAlignment="Top" Click="button1_Click"/>
         <StackPanel HorizontalAlignment="Left" Height="100" Margin="876,155,0,0" VerticalAlignment="Top" Width="100"/>
-        <GridView x:Name="gridView" HorizontalAlignment="Left" Margin="766,338,0,0" VerticalAlignment="Top" Width="100"/>
+        <GridView >
+            <GridView.ItemTemplate>
+                <DataTemplate>
+                    <Image Width="150"/>
+                    <TextBlock FontSize ="16"/>
+                    <TextBlock FontSize ="10"/>
+                </DataTemplate>
+            </GridView.ItemTemplate>
+            
+        </GridView>
 
     </Grid>
 </Page>

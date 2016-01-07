@@ -43,14 +43,16 @@ namespace MockAPP
                     // resultBlock.Text = customer.ToString();
                     string output = "";
                     var results = await response.Content.ReadAsAsync<List<Customer>>();
-                    foreach (var customer in results)
-                    {
-                        output += "\nCustomer : "+customer.CustomerName+" Joined : "+customer.Joined;
-                    }
+                    //foreach (var customer in results)
+                    //{
+                    //    output += "\nCustomer : "+customer.CustomerName+" Joined : "+customer.Joined;
+                    //}
 
-                    resultBlock.Text = output;
+                    //resultBlock.Text = output;
+
+                    gridView.dataSource = results;
                 }
-
+              
             }
         }
 
