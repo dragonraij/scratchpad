@@ -7,7 +7,7 @@
 	<body ng-app="app" ng-controller="TestCtrl as test">
 		<input type="text" ng-model="search" />
 		
-		<p ng-repeat="person in test.people | filter: search">
+		<p ng-repeat="person in test.people | limitTo:5 | filter:search | orderBy:'name' ">
 			{{ person.name }}
 		</p>
 	</body>
