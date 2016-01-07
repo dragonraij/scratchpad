@@ -6,7 +6,7 @@ angular.module('greetings', [])
 	}
 })
 
-.directive("welcomeAtrib", function(){
+.directive("welcome2", function(){
 	return {
 		restrict: "A",
 		link: function(){
@@ -15,4 +15,11 @@ angular.module('greetings', [])
 	}	
 })
 
-;
+.directive("goodbye", function(){
+	return {
+		restrict: "C",
+		link: function(){
+			alert("See ya later!");
+		}
+	}
+});
