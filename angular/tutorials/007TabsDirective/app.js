@@ -7,8 +7,12 @@
 			transclude: true,
 			template: '<h2>Hello World!</h2> <div role="tabpanel" ng-transclude></div>',
 			require: '^tabset',
-			scope: {},
-			link: function(sscope, elem, attr, tabsetCtrl){}
+			scope: {
+				heading:'@'
+			},
+			link: function(sscope, elem, attr, tabsetCtrl){
+				tabsetCtrl.addTab(scope)
+			}
 		}
 	})
 	.directive('tabset', function(){
