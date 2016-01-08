@@ -2,8 +2,57 @@ angular.module('greetings', [])
 .directive("welcome", function(){
 	return {
 		restrict:"E",
-		template: "<div>Howdy there! You look splendid.</div>"
+		controller: function($scope){
+			$scope.words = [];
+			
+			this.sayHello = function(){
+				$sscope.words.push("Helllo");
+			};
+			
+			this.sayHowdy = function(){
+				$scope.words.push("howdy");
+			};
+			
+			this.sayHi = function(){
+				$scope.words.push("hi")	
+			};
+		},
+		
+		link: function(scope, element){
+			element.bind("mouseenter", function(){
+				console.log(scope.words);
+			});
+		}
 	}
+})
+
+//used to interact with the main controller welcome
+.directive("hello", function(){
+	return {
+		require: "welcome",
+		link: function (scope, element, attrs, welcomeCtrl){
+			welcomeCtrl.sayHello();
+		}
+	};
+})
+
+
+.directive("howdy", function(){
+	return {
+		require: "welcome",
+		link: function (scope, element, attrs, welcomeCtrl){
+			welcomeCtrl.sayHowdy();
+		}
+	};
+})
+
+.directive("hi", function (){
+	return{
+		require: 'welcome',
+		link: function(scope, element, attrs, welcomeCtrl){
+			welcomeCtrl.sayHi();
+		}
+	};
 })
 
 .controller('FunCtrl', FunCtrl)
