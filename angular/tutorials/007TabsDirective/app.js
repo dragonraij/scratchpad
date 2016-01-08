@@ -10,4 +10,18 @@
 			link: function(sscope, elem, attr){}
 		}
 	})
+	.directive('tabset', function(){
+		return {
+			restrict: 'E',
+			transclude:true,
+			scope: {},
+			templateUrl: 'tabset.html',
+			bindToController: true,
+			controllerAs: 'tabset',
+			controller: function(){
+				var self = this
+				self.tabs = []
+			}
+		}
+	})
 })(window);
