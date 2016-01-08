@@ -2,11 +2,12 @@ angular.module('greetings', [])
 .directive("welcome", function(){
 	return {
 		restrict:"E",
+		scope:{},
 		controller: function($scope){
 			$scope.words = [];
 			
 			this.sayHello = function(){
-				$sscope.words.push("Helllo");
+				$scope.words.push("Helllo");
 			};
 			
 			this.sayHowdy = function(){
