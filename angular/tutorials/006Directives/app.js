@@ -6,6 +6,8 @@ angular.module('greetings', [])
 	}
 })
 
+.controller('FunCtrl', FunCtrl)
+
 .directive("welcome2", function(){
 	return {
 		restrict: "A",
@@ -25,9 +27,9 @@ angular.module('greetings', [])
 })
 
 .directive("entering", function(){
-	return function(scope, element){
+	return function(scope, element, attrs){
 		element.bind("mouseenter", function(){
-			console.log("Mouse has entered the div");
+			scope.fun.start();
 		})
 	}
 })
@@ -35,7 +37,14 @@ angular.module('greetings', [])
 .directive("leaving", function(){
 	return function(scope, element){
 		element.bind("mouseleave", function(){
-			console.log("Mouse has left the div");
+element.removeClass("activeClass");
 		})
 	}
 });
+
+function FunCtrl(){
+	var self = this;
+	self.start = function(){
+		console.log("Fun times have been started!");
+	}
+}
