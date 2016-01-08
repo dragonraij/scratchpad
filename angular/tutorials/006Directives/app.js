@@ -29,7 +29,7 @@ angular.module('greetings', [])
 .directive("entering", function(){
 	return function(scope, element, attrs){
 		element.bind("mouseenter", function(){
-			scope.fun.start();
+			scope.$apply(attrs.entering);
 		})
 	}
 })
@@ -46,5 +46,9 @@ function FunCtrl(){
 	var self = this;
 	self.start = function(){
 		console.log("Fun times have been started!");
+	}
+	
+	self.end = function(){
+		console.log("Fun times is over");
 	}
 }
