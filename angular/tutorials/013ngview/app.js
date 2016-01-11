@@ -1,4 +1,4 @@
-var app = angular.module("app", [])
+var app = angular.module("app", []);
 
 app.config(function($routeProvider){
 	$routeProvider.when("/",
@@ -8,4 +8,9 @@ app.config(function($routeProvider){
 		controllerAs: "app"
 	}
 	);
+});
+
+app.controller('AppCtrl', function(){
+	var self = this;
+	self.message = "The app routing is working!";
 })
