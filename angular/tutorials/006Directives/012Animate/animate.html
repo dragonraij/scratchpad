@@ -1,0 +1,20 @@
+<html>
+	<head>
+		<title>Animate</title>
+		<link href="animations.css" rel="stylesheet" type="text/css">
+  
+
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.0/angular.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.0/angular-animate.js"></script>
+	</head>
+	<body ng-app="ngAnimate">
+		<div ng-init="checked=true">
+			<label>
+				<input type="checkbox" ng-model="checked" style="float:left; margin-right:10px;"> Is Visible...
+  </label>
+  			<div class="check-element sample-show-hide" ng-show="checked" style="clear:both;">
+    Visible...
+  </div>
+		</div>
+	</body>
+</html>
