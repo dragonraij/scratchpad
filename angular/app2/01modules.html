@@ -4,10 +4,14 @@
         <script>
             var account = function (){
               var balance = 0;
-                var depostit = function (money){
+              var depostit = function (money){
                     balance +=money;
                     console.log("balance after deposti: ", balance);
-                }
+              }
+              var withdraw = function(money){
+                  balance -= money;
+                  console.log("balance after withdraw: ", balance);
+              }
             }
         </script>
     </head>
