@@ -11,8 +11,8 @@
             
             myApp = angular.module(name, requires);
             
-            myApp.controller("AppCtrl", function(){
-                this.employee = {
+            myApp.controller("AppCtrl", function($scope){
+                $scope.employee = {
                     firstName: "Raj",
                     lastName: "Pra",
                     occupation: "WebDev"
@@ -22,7 +22,7 @@
         }());
         </script>
     </head>
-    <body ng-app="myApp" ng-controller="AppCtrl as app">
-        <p>{{app.employee.firstName+ " " + app.employee.lastName + " " + app.employee.occupation}}</p>
+    <body ng-app="myApp" ng-controller="AppCtrl">
+        <p>{{employee.firstName+ " " + employee.lastName + " " + employee.occupation}}</p>
     </body>
 </html>
