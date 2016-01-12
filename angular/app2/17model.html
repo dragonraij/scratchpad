@@ -17,6 +17,10 @@
                     lastName: "Pra",
                     occupation: "WebDev"
                 };
+                
+                $scope.showMsg = function(){
+                    console.log("This is a message!");
+                }
             });
             
         }());
@@ -24,5 +28,7 @@
     </head>
     <body ng-app="myApp" ng-controller="AppCtrl">
         <p>{{employee.firstName+ " " + employee.lastName + " " + employee.occupation}}</p>
+        <button ng-click="showMsg()">Click Me!</button>
+        <input type="file"/>
     </body>
 </html>
