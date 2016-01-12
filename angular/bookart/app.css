@@ -60,7 +60,7 @@ h3{
 }
 
 .book.ng-leave {
-    transition: 0.5s linear all;
+    transition: 0.4s linear all;
     opacity: 1;
     left: 0;
 }
@@ -68,4 +68,15 @@ h3{
 .book.ng-leave-active {
     opacity: 0;
     left: 600px;
+}
+
+.book.ng-enter {
+    transition: 0.4s linear all;
+    opacity: 0;
+    left: 600;px
+}
+
+.book.ng-enter-active {
+    opacity: 1;
+    left: 0;
 }

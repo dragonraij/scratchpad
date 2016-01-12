@@ -88,11 +88,20 @@ kartApp.controller("KartListCtrl", function($scope, kartService){
     }
 });
 
-kartApp.controller("HeaderCtrl", ['$scope', function($scope){
+kartApp.controller("HeaderCtrl", ['$scope', function($scope, $location){
     $scope.appDetails = {
         title: "BooKart",
         tagline: "We have 1 million books for you"
     };
+    
+    $scope.nav={};
+    $scope.nav.isActive = function(path){
+        if(path===$location.path()){
+            return true;
+        }
+        
+        return false;
+    }
 }]);
 
 kartApp.controller("BookListCtrl", function($scope, bookService, kartService){
