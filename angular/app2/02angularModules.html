@@ -3,8 +3,17 @@
         <title>Angular module example</title>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js"></script>
         <script>
-            var myApp = angular.module("myApp", []);
-            console.log(myApp);
+            (function (){
+                var name = "myApp",
+                    requires = [];
+                var myApp = angular.module(name, requires);
+                console.log(myApp);
+                
+            }());
+            
+            //log the module
+            console.log(angular.module("myApp"));
+            
         </script>
     </head>
     <body>

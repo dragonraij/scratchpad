@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>Working with models</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js"></script>    
+        <script>
+        
+        (function(){
+            var name = "myApp",
+                requires = [],
+                myApp = null;
+            
+            myApp = angular.module(name, requires);
+            
+            myApp.controller("AppCtrl", function(){
+                this.employee = {
+                    firstName: "Raj",
+                    lastName: "Pra",
+                    occupation: "WebDev"
+                };
+            });
+            
+        }());
+        </script>
+    </head>
+    <body ng-app="myApp" ng-controller="AppCtrl as app">
+        <p>{{app.employee.firstName+ " " + app.employee.lastName + " " + app.employee.occupation}}</p>
+    </body>
+</html>
