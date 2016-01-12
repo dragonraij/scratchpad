@@ -4,15 +4,30 @@
         <script>
             var account = function (){
               var balance = 0;
-              var depostit = function (money){
+              var deposit = function (money){
                     balance +=money;
+                    SendMsg();
                     console.log("balance after deposti: ", balance);
               }
               var withdraw = function(money){
                   balance -= money;
+                  SendMsg();
                   console.log("balance after withdraw: ", balance);
               }
+              
+              var SendMsg = function(){
+                  console.log("Sending Message ...");
+              }
+              
+              return {
+                  deposit: deposit,
+                  withdraw: withdraw 
+              }
             }
+            
+            var a1 = account();
+            a1.deposit(1000);
+            a1.withdraw(300);
         </script>
     </head>
     <body>
