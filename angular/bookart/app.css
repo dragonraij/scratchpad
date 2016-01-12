@@ -1,5 +1,6 @@
 #headerWrapper{
 	width: 100%;
+    margin-bottom: 20px;
 }
 
 .logo{
@@ -7,6 +8,11 @@
 	margin-right: 10px;
     font-size: 35px;
 	font-family: fantasy;
+    color:#006dcc;
+}
+
+h3{
+    color: #006dcc;
 }
 
 .tagline{
@@ -14,9 +20,52 @@
     margin-top: 50px;
     margin-left: -123px;
     font-family: monospace;
+    margin-bottom: 20px;
 }
 
 .nav-wrapper{
     margin-left: 100px;
     margin-top: 15px;
+}
+
+#bookListWrapper {
+    width: 100%;
+    padding: 10px;
+    padding-top: 30px;
+}
+
+#bookListWrapper input {
+    width: 25%;
+}
+
+#bookListWrapper .book{
+    border: 1px solid gray;
+    padding: 10px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+#bookListWrapper .book .book-details{
+    margin-left: 160px;
+}
+
+.container.ng-enter{
+    -webkit-transition: 0.5s linear all;
+    transition: 0.5s linear all;
+    opacity: 0;
+}
+
+.container.ng-enter-active{
+    opacity: 1;
+}
+
+.book.ng-leave {
+    transition: 0.5s linear all;
+    opacity: 1;
+    left: 0;
+}
+
+.book.ng-leave-active {
+    opacity: 0;
+    left: 600px;
 }
