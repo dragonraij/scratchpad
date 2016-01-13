@@ -10,8 +10,10 @@
                 
                 app = angular.module(name, requires);
                 
-                app.controller("AppCtrl", function($scope){
+                app.controller("AppCtrl", function($scope, ){
                     $scope.checkMe = true;
+                    
+                    $scope.url = "http://google.com";
                 });
             }());
         </script>
@@ -20,5 +22,6 @@
         <input type="checkbox" ng-checked="{{checkMe}}" /> Check Me!<br/>
         <button ng-disabled={{checkMe}}>Click Me!</button>
         <input type="text" value="Some Text" ng-readonly={{checkMe}}/>
+        <a ng-href="{{url}}">Go to google</a>
     </body>
 </html>
