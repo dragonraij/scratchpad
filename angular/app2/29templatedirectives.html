@@ -46,6 +46,10 @@
                         return "29contacttable.html"
                     }
                 }
+                
+                $scope.onPartialLoad = function () {
+                    console.log($scope.viewFile()+ "loaded");
+                }
             });
             
         }());
@@ -53,6 +57,6 @@
     </head>
     <body ng-app="myApp" ng-controller="AppCtrl">
         <input type="checkbox" ng-model="viewState"/> Toggle List View
-        <ng-include src="viewFile()"></ng-include>
+        <ng-include src="viewFile()" onload="onPartialLoad()"></ng-include>
     </body>
 </html>
