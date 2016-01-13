@@ -34,7 +34,7 @@
     </head>
     <body ng-app="myApp" ng-controller="AppCtrl">
         <div>Total number of contacts: {{contacts.length}}</div>
-        <div>Total number of contacts: {{contacts.length}}</div>
+        <div>Total number of contacts: {{::contacts.length}}</div>
         <button ng-click="addContact()">Add Contact</button>
     </body>
 </html>
