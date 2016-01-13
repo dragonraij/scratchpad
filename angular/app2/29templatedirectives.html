@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <title>Template Directives</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js"></script>
+        <script>
+        
+        (function(){
+            var name = "myApp",
+                requires = [],
+                myApp = null;
+            
+            myApp = angular.module(name, requires);
+            
+            myApp.controller("AppCtrl", function($scope){
+                $scope.contacts = [
+                    {firstname: "John", lastname: "Smith"},
+                    {firstname: "Jimmy", lastname: "Jacob"},
+                    {firstname: "Charles", lastname: "Baily"},
+                    {firstname: "Jacob", lastname: "Bateman"},
+                    {firstname: "Andrew", lastname: "Baxter"}
+                ];
+                
+                $scope.showMsg = function(){
+                    console.log("This is a message!");
+                };
+                
+                $scope.addContact = function(){
+                    this.contacts.push({firstname: "Ali", lastname: "Baba"});
+                };
+            });
+            
+        }());
+        </script>
+    </head>
+    <body ng-app="myApp" ng-controller="AppCtrl">
+        <table>
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Favourite</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="contact in contacts">
+                    <td>{{contact.firstname}}</td>
+                    <td>{{contact.lastname}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>
