@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <title>Styles Directives</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js"></script>
+        <script>
+            (function(){
+                var name = "myApp", requires = [], myApp = null;
+                myApp = angular.module(name, requires);
+                myApp.controller("AppCtrl", function($scope){
+                    
+                });
+            }());
+        </script>
+    </head>
+    <body ng-app="myApp" ng-controller="AppCtrl">
+        <button ng-click="styles={'color':'red'}" >Set Color</button >
+        <button ng-click="styles={'font-weight':'bold'}">Bold</button>
+        <button ng-click="styles={'font-style':'italic'}">Italic</button>
+        <p ng-style="styles">This text will be styled with ng-style directive</p>
+    </body>
+</html>
