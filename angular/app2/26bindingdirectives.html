@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <title>Binding Directives</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js"></script>
+        <script>
+        
+        (function(){
+            var name = "myApp",
+                requires = [],
+                myApp = null;
+            
+            myApp = angular.module(name, requires);
+            
+            myApp.controller("AppCtrl", function($scope){
+                $scope.contacts = [
+                    {firstname: "John", lastname: "Smith"},
+                    {firstname: "Jimmy", lastname: "Jacob"},
+                    {firstname: "Charles", lastname: "Baily"},
+                    {firstname: "Jacob", lastname: "Bateman"},
+                    {firstname: "Andrew", lastname: "Baxter"}
+                ];
+                
+                $scope.showMsg = function(){
+                    console.log("This is a message!");
+                }
+            });
+            
+        }());
+        </script>
+    </head>
+    <body ng-app="myApp" ng-controller="AppCtrl">
+        <div>Total number of contacts: {{contacts.length}}</div>
+        
+    </body>
+</html>
