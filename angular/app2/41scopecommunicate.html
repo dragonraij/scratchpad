@@ -1,0 +1,93 @@
+<html>
+    <head>
+        <title>Scope Communication</title>
+        <!-- Angular Material style sheet -->
+  <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
+        
+          <!-- Angular.js Libraries -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+        
+        
+  <!-- Angular Material Library -->
+  <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
+        <script>
+            (function(){
+                var name = "myApp", requires = ['ngMaterial'], myApp = null;
+                myApp = angular.module(name, requires);
+                myApp.controller("AppCtrl", function($scope){
+                    $scope.$on("removeProduct", function(evt, data){
+                       console.log("remove product", data.name); 
+                    });
+                });
+                
+                //Controller for products
+                myApp.controller("ProductCtrl", function($scope, $rootScope){
+                    $scope.products = [{name:"computer", price:350}, {name:"Music System", price:80}, {name:"Clothes", price: 45}];
+                    
+                    $scope.addToCart = function(product){
+                        $rootScope.$broadcast("addProduct", product);
+                        console.log("Broadcasted");
+                    }
+                });
+                
+                //Controller for Cart
+                myApp.controller("CartCtrl", function($scope){
+                    $scope.cart = [];
+                    
+                    $scope.$on("addProduct", add);
+                    
+                    function add(evt, product){
+                        console.log("recieved");
+                        $scope.cart.push(product);
+                    }
+                    
+                    $scope.removeFromCart = function(product){
+                        $scope.$emit("removeProduct", product);
+                    }
+                });
+            }());
+        </script>
+    </head>
+    <body ng-app="myApp" ng-controller="AppCtrl">
+        <table  ng-controller="ProductCtrl">
+            <h1>Products</h1>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Product Name</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="product in products">
+                    <td>{{$index+1}}</td>
+                    <td>{{product.name}}</td>
+                    <td>{{product.price | currency}}</td>
+                    <td><md-button class="md-raised md-primary" ng-click="addToCart(product)">Add to Cart</md-button></td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <table  ng-controller="CartCtrl">
+            <h1>Cart</h1>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Product Name</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="product in cart">
+                    <td>{{$index+1}}</td>
+                    <td>{{product.name}}</td>
+                    <td>{{product.price | currency}}</td>
+                    <td><md-button class="md-raised md-primary" ng-click="removeFromCart(product)">Remove from Cart</md-button></td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>
