@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <title>Cruding with Mongo</title>
+        <!-- Angular Material style sheet -->
+  <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
+        
+          <!-- Angular.js Libraries -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+
+  <!-- Angular Material Library -->
+  <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
+        <script>
+            (function(){
+                var name = "myApp", requires = ['ngMaterial'], myApp = null;
+                myApp = angular.module(name, requires);
+                myApp.controller("AppCtrl", function($scope){
+                    $scope.courses = [];
+                    
+                    //variables for toggling view states
+                    $scope.toggleAddCourseView = false;
+                    $scope.toggleEditCourseView = false;
+                    
+                    //to load all courses
+                    $scope.loadCourses = function(){
+                        
+                    }
+                    
+                    $scope.toggleAddCourse = function(flag){
+                        $scope.togleAddCourseView = flag;
+                    }
+                    
+                    $scope.toggleEditCourse = function(flag){
+                        $scope.toggleEditCourseView = flag;
+                    }
+                });
+                
+                
+            }());
+        </script>
+    </head>
+    <body ng-app="myApp" ng-controller="AppCtrl">
+        <div>
+            <md-button ng-click="loadCourses()" class="md-raised md-primary">Load Courses</md-button>
+            <md-button ng-click="toggleAddCourse(true)" class="md-raised md-primary">Add New Course</md-button>
+        </div>
+        <div>
+            <ng-include src="'partials/48course_list.html'"></ng-include>
+            <ng-include src="'partials/48add_course.html'"></ng-include>
+            <ng-include src="'partials/48edit_course.html'"></</ng-include>
+        </div>
+
+    
+    </body>
+</html>
