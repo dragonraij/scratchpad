@@ -19,6 +19,10 @@
         <button ng-click="styles={'font-weight':'bold'}">Bold</button>
         <button ng-click="styles={'font-style':'italic'}">Italic</button>
         <p ng-style="styles">This text will be styled with ng-style directive</p>
+        <input type="checkbox" ng-model="deleted">deleted (apply "strike" class) <br/>
+        <input type="checkbox" ng-model="important">important (apply "bold" class) <br/>
+        <input type="checkbox" ng-model="error"> error (apply "red" class) <br/>
+        <p ng-class="{strike:deleted, bold:important, red:error}">Map Syntax Example</p>
     </body>
     <style>
         .strike{
