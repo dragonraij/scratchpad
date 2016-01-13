@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title>Element Directives</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js"></script>    
+        <script>
+            (function(){
+                var name="myApp",
+                    requires = [],
+                    app = null;
+                
+                app = angular.module(name, requires);
+                
+                app.controller("AppCtrl", function($scope){
+                    $scope.checkMe = true;
+                });
+            }());
+        </script>
+    </head>
+    <body ng-app="myApp" ng-controller="AppCtrl">
+        <input type="checkbox" ng-checked="{{checkMe}}" /> Check Me!
+    </body>
+</html>
