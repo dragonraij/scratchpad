@@ -18,7 +18,7 @@
         }());
         </script>
     </head>
-    <body ng-app="myApp" ng-controller="AppCtrl">
+    <body ng-app="myApp" ng-controller="AppCtrl" ng-cloak>
         <div ng-repeat="channel in ['None', 'Star TV', 'Star Worlds']">
             <input type="radio" name="leisure" value="{{channel}}"
                    ng-model="data.whichChannel" ng-checked="$first">{{channel}}

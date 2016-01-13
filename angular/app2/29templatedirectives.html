@@ -29,6 +29,12 @@
                     {firstname: "Andrew", lastname: "Baxter"}
                 ];
                 
+                $scope.toggleNewContact = false;
+                
+                $scope.shownewform = function(){
+                    $scope.toggleNewContact=true;
+                };
+                
                 $scope.showMsg = function(){
                     console.log("This is a message!");
                 };
@@ -58,5 +64,13 @@
     <body ng-app="myApp" ng-controller="AppCtrl">
         <input type="checkbox" ng-model="viewState"/> Toggle List View
         <ng-include src="viewFile()" onload="onPartialLoad()"></ng-include>
+        <button ng-click="shownewform()">Add New Contact</button>
+        
+        <form ng-show="toggleNewContact">
+            First Name: <input type="text" /> <br/>
+            Last Name: <input type="text" /> <br/>
+            <button>Submit</button>
+            <button>Cancel</button>
+        </form>
     </body>
 </html>
