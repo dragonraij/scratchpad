@@ -17,6 +17,8 @@
         </script>
     </head>
     <body ng-app="myApp" ng-controller="AppCtrl">
-        <input type="checkbox" ng-checked="{{checkMe}}" /> Check Me!
+        <input type="checkbox" ng-checked="{{checkMe}}" /> Check Me!<br/>
+        <button ng-disabled={{checkMe}}>Click Me!</button>
+        <input type="text" value="Some Text" ng-readonly={{checkMe}}/>
     </body>
 </html>
