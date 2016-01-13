@@ -13,9 +13,25 @@
         </script>
     </head>
     <body ng-app="myApp" ng-controller="AppCtrl">
+        <input type="tex" ng-model="style" placeholder="Type :bold strike red">
+        <p ng-class="style">Using String Syntax</p>
         <button ng-click="styles={'color':'red'}" >Set Color</button >
         <button ng-click="styles={'font-weight':'bold'}">Bold</button>
         <button ng-click="styles={'font-style':'italic'}">Italic</button>
         <p ng-style="styles">This text will be styled with ng-style directive</p>
     </body>
+    <style>
+        .strike{
+            text-decoration: line-through;
+        }
+        
+        .bold{
+            font-weight: bold;
+            
+        }
+        
+        .red{
+            color: red;
+        }
+    </style>
 </html>
