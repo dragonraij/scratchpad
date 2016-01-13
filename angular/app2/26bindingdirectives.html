@@ -22,7 +22,11 @@
                 
                 $scope.showMsg = function(){
                     console.log("This is a message!");
-                }
+                };
+                
+                $scope.addContact = function(){
+                    this.contacts.push({firstname: "Ali", lastname: "Baba"});
+                };
             });
             
         }());
@@ -30,6 +34,7 @@
     </head>
     <body ng-app="myApp" ng-controller="AppCtrl">
         <div>Total number of contacts: {{contacts.length}}</div>
-        
+        <div>Total number of contacts: {{contacts.length}}</div>
+        <button ng-click="addContact()">Add Contact</button>
     </body>
 </html>
