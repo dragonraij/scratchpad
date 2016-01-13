@@ -2,6 +2,15 @@
     <head>
         <title>Template Directives</title>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js"></script>
+        <style>
+            .odd {
+                background-color: tan;
+            }
+            
+            .even {
+                background-color: aquamarine;
+            }
+        </style>
         <script>
         
         (function(){
@@ -27,26 +36,23 @@
                 $scope.addContact = function(){
                     this.contacts.push({firstname: "Ali", lastname: "Baba"});
                 };
+                
+                $scope.url = "29contactlist.html";
+                
+                $scope.viewFile = function(){
+                    if($scope.viewState){
+                        return "29contactlist.html";
+                    }else {
+                        return "29contacttable.html"
+                    }
+                }
             });
             
         }());
         </script>
     </head>
     <body ng-app="myApp" ng-controller="AppCtrl">
-        <table>
-            <thead>
-                <tr>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Favourite</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr ng-repeat="contact in contacts">
-                    <td>{{contact.firstname}}</td>
-                    <td>{{contact.lastname}}</td>
-                </tr>
-            </tbody>
-        </table>
+        <input type="checkbox" ng-model="viewState"/> Toggle List View
+        <ng-include src="viewFile()"></ng-include>
     </body>
 </html>
