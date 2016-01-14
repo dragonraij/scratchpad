@@ -31,6 +31,19 @@
                            
                            return deferred.promise;
        
+                       },
+                       
+                       addCourse: function (course){
+                           var deferred = $q.defer();
+                           $http.post(url, course, config)
+                           .success(function (data){
+                               deferred.resolve(data);
+                           })
+                           .error(function(error){
+                               deferred.reject(error);
+                           });
+                           
+                           return deferred.promise;
                        }
                    } 
                 });
