@@ -17,13 +17,19 @@
                 var name = "myApp", requires = ['ngMaterial'], myApp = null;
                 myApp = angular.module(name, requires);
                 
-                myApp.factory("courseDataSvc", function($http){
+                myApp.factory("courseDataSvc", function($http, $q){
                    return {
                        getCourses: function(){
+                           var deferred = $q.defer();
                         $http.get(url)
                         .success(function (data){
-                           return data; 
+                           deferred.resolve(data); 
+                        })
+                        .error(function (error){
+                            deferred.reject(error);
                         });
+                           
+                           return deferred.promise;
        
                        }
                    } 
@@ -39,6 +45,15 @@
                     //to load all courses
                     $scope.loadCourses = function(){
                         var url = "https://api.mongolab.com/api/1/databases/my-academy/course?apiKey=z5BQZk0u6oNe2_4S7GbDcp1Sb5h3GMFw"
+                        $scope.courses = courseDataSvc.getCourses().then(success, error);
+                        function success(data){
+                            $scope.courses = data;
+                            
+                        }
+                        
+                        function error(e){
+                            console.log("error: ", e)
+                        }
                     }
                     
                     $scope.toggleAddCourse = function(flag){
