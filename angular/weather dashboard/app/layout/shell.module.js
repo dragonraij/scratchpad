@@ -9,6 +9,14 @@
             templateUrl: "app/search/search.html",
             controller: "Search"
         })
+        .when("/weather/:id", {
+            templateUrl: "app/weather/weather.html",
+            controller: "Weather"
+        })
+        .when("/forecast/:id", {
+            templateUrl: "app/forecast/forecast.html",
+            controller: "Weather"
+        })
         .otherwise({
             redirectTo: "/search"
         })
