@@ -16,7 +16,7 @@
             (function(){
                 var name = "myApp", requires = ['ngMaterial'], myApp = null;
                 myApp = angular.module(name, requires);
-                myApp.controller("AppCtrl", function($scope){
+                myApp.controller("AppCtrl", function($scope, $http){
                     $scope.courses = [];
                     
                     //variables for toggling view states
@@ -25,7 +25,11 @@
                     
                     //to load all courses
                     $scope.loadCourses = function(){
-                        
+                        var url = "https://api.mongolab.com/api/1/databases/my-academy/course?apiKey=z5BQZk0u6oNe2_4S7GbDcp1Sb5h3GMFw"
+                        $http.get(url)
+                        .success(function (data){
+                           $scope.courses = data; 
+                        });
                     }
                     
                     $scope.toggleAddCourse = function(flag){
@@ -47,9 +51,9 @@
             <md-button ng-click="toggleAddCourse(true)" class="md-raised md-primary">Add New Course</md-button>
         </div>
         <div>
-            <ng-include src="'partials/48course_list.html'"></ng-include>
-            <ng-include src="'partials/48add_course.html'"></ng-include>
-            <ng-include src="'partials/48edit_course.html'"></</ng-include>
+            <ng-include src="'48course_list.html'"></ng-include>
+            <ng-include src="'48add_course.html'"></ng-include>
+            <ng-include src="'48edit_course.html'"></</ng-include>
         </div>
 
     
