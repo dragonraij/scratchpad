@@ -16,7 +16,20 @@
             (function(){
                 var name = "myApp", requires = ['ngMaterial'], myApp = null;
                 myApp = angular.module(name, requires);
-                myApp.controller("AppCtrl", function($scope, $http){
+                
+                myApp.factory("courseDataSvc", function($http){
+                   return {
+                       getCourses: function(){
+                        $http.get(url)
+                        .success(function (data){
+                           return data; 
+                        });
+       
+                       }
+                   } 
+                });
+                
+                myApp.controller("AppCtrl", function($scope, $http, courseDataSvc){
                     $scope.courses = [];
                     
                     //variables for toggling view states
@@ -26,10 +39,6 @@
                     //to load all courses
                     $scope.loadCourses = function(){
                         var url = "https://api.mongolab.com/api/1/databases/my-academy/course?apiKey=z5BQZk0u6oNe2_4S7GbDcp1Sb5h3GMFw"
-                        $http.get(url)
-                        .success(function (data){
-                           $scope.courses = data; 
-                        });
                     }
                     
                     $scope.toggleAddCourse = function(flag){
