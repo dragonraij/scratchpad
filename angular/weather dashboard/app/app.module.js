@@ -1,6 +1,9 @@
 (function(){
     var name = "app",
-        requires = ["app.shell"];
+        requires = ["app.shell", "app.search"];
     
-    angular.module(name, requires);
+    angular.module(name, requires)
+    .run(['$route', function($route){
+        $route.reload();
+    }]);
 })();
