@@ -1,0 +1,94 @@
+<html>
+    <head>
+        <title>Routing the App</title>
+        <!-- Angular Material style sheet -->
+  <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
+        
+          <!-- Angular.js Libraries -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+
+  <!-- Angular Material Library -->
+  <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
+        <script>
+            (function(){
+                var name = "myApp", requires = ['ngMaterial', 'ngRoute'], myApp = null;
+                myApp = angular.module(name, requires);
+                
+                myApp.config(function($routeProvider){
+                    $routeProvider.when("/course", {
+                        templateUrl: "48course_list.html",
+                        controller: "CourseCtrl"
+                    })
+                });
+                
+                myApp.factory("courseDataSvc", function($http, $q){
+                   return {
+                       getCourses: function(){
+                           var deferred = $q.defer();
+                        $http.get(url)
+                        .success(function (data){
+                           deferred.resolve(data); 
+                        })
+                        .error(function (error){
+                            deferred.reject(error);
+                        });
+                           
+                           return deferred.promise;
+       
+                       },
+                       
+                       addCourse: function (course){
+                           var deferred = $q.defer();
+                           $http.post(url, course, config)
+                           .success(function (data){
+                               deferred.resolve(data);
+                           })
+                           .error(function(error){
+                               deferred.reject(error);
+                           });
+                           
+                           return deferred.promise;
+                       }
+                   } 
+                });
+                
+                myApp.controller("CourseCtrl", function($scope, $http, courseDataSvc){
+                    $scope.courses = [];
+                    
+                                     
+                    //to load all courses
+                    $scope.loadCourses = function(){
+                        var url = "https://api.mongolab.com/api/1/databases/my-academy/course?apiKey=z5BQZk0u6oNe2_4S7GbDcp1Sb5h3GMFw"
+                        $scope.courses = courseDataSvc.getCourses().then(success, error);
+                        function success(data){
+                            $scope.courses = data;
+                            
+                        }
+                        
+                        function error(e){
+                            console.log("error: ", e)
+                        }
+                    }
+                    
+                   
+                });
+                
+                
+            }());
+        </script>
+    </head>
+    <body ng-app="myApp">
+        <div>
+            <a>Add New Course</a>
+        </div>
+        <div ng-view>
+           
+        </div>
+
+    
+    </body>
+</html>
