@@ -9,15 +9,12 @@
             .then(
             function(response){
                 $scope.cities=response.list;
-                //$scope.cities.push(response) ;
-                console.log(response);
             },
             function(err){
                 console.log("error finding cities", err);
             }
             )
-            //for debug
-            console.log(data.str);
+
         }
         
     });
