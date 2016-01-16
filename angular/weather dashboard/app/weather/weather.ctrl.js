@@ -3,6 +3,8 @@
     .controller("Weather", function($scope, $routeParams, weatherSvc){
         $scope.current = null;
         
+        $scope.getTime = getTime;
+        
         if($routeParams.id !== undefined){
             getCurrent($routeParams.id);
         }
@@ -17,6 +19,10 @@
                     console.log("Error Loading Current Weather Data", err);
                 }
             )
+        }
+        
+        function getTime(dt){
+            return new Date(dt * 1000);
         }
     });
 })();
