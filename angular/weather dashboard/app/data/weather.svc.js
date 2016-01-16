@@ -6,13 +6,14 @@
         }
         
         function findByLocation(location){
-            var url = "http://api.openweathermap.org/data/2.5/weather?q="+location+"&APPID=aae4a1f36a91da5662b14523e312a089";
+            var url = "http://api.openweathermap.org/data/2.5/find?q="+location+"&APPID=aae4a1f36a91da5662b14523e312a089";
             
             var defer = $q.defer();
             
             $http.get(url)
             .success(function(response){
                 defer.resolve(response);
+                console.log("New : " + response )
             })
             .error(function(err){
                 defer.reject(err);
