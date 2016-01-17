@@ -10,6 +10,7 @@
         }
         
         function getCurrent(id){
+            console.log("In weather controller")
             weatherSvc.getCurrent(id)
             .then(
                 function(response){

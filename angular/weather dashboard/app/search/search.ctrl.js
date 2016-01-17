@@ -5,6 +5,8 @@
         $scope.$on("search", search);
         
         function search(evt, data){
+            
+            console.log("In search module");
             weatherSvc.find(data.str)
             .then(
             function(response){

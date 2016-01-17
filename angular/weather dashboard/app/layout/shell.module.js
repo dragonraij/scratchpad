@@ -15,7 +15,7 @@
         })
         .when("/forecast/:id", {
             templateUrl: "app/forecast/forecast.html",
-            controller: "Weather"
+            controller: "Forecast"
         })
         .otherwise({
             redirectTo: "/search"

@@ -41,9 +41,10 @@
         }
         
         function getForecast(id){
+            console.log("Getting forcast");
             var defer = $q.defer();
             
-            var url = "http://api.openweathermap.org/data/2.5/forecast/daily?id=" +id;
+            var url = "http://api.openweathermap.org/data/2.5/forecast/daily?id=" +id+"&APPID=aae4a1f36a91da5662b14523e312a089";
             
             $http.get(url)
             .success(function(response){
