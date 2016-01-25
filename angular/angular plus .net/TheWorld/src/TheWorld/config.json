@@ -1,0 +1,5 @@
+﻿{
+  "Data": {
+    "WorldContextConnection":  "Server=(localdb)\\ProjectsV12;Database=TheWorldDB;Trusted_Connection=true;MultipleActiveResultSets=true;"
+  }
+}
